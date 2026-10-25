@@ -797,7 +797,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
   const PUBLIC_URL = IS_SITE ? (window.SITE.url || (location.origin+location.pathname)) : ARTIFACT_URL;
   const TEMPLATE = document.documentElement.outerHTML;
   let downloads = null;
-  const CATS = ["Whisky","Gin","Vodka","Rum","Cachaça","Tequila e mezcal","Outros destilados","Licores e amaros","Vermutes e vinhos","Bitters","Xaropes","Mixers e refrigerantes","Frutas e ervas","Guarnições","Outros"];
+  const CATS = ["Whisky","Gin","Vodka","Rum","Cachaça","Tequila e mezcal","Outros destilados","Licores e amaros","Vermutes e vinhos","Cervejas","Bitters","Xaropes","Mixers e refrigerantes","Frutas e ervas","Guarnições","Outros"];
   const LEVELS = [
     {k:"fechada", label:"Fechada", fill:1},
     {k:"cheio", label:"Cheia", fill:1},
@@ -868,7 +868,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     if(c==="Whisky") return /bourbon|\brye\b/.test(t) ? "round" : "square";
     if(c==="Gin"||c==="Vodka"||c==="Tequila e mezcal") return "tall";
     if(c==="Rum"||c==="Cachaça") return "round";
-    if(c==="Vermutes e vinhos") return "wine";
+    if(c==="Vermutes e vinhos"||c==="Cervejas") return "wine";
     if(/amarula|creme/.test(t)) return "cream";
     if(/cointreau/.test(t)) return "square";
     if(/licor 43|campari|aperol|fernet|sem alcool/.test(t)) return "tall";
@@ -1303,8 +1303,8 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     gabriela:{any:["gabriela","cravo e canela"]},
     cravo:{any:["cravo"],none:["gabriela","cravo e canela"]},
     maca:{any:["^maca\\b","maca verde","maca fuji","maca gala"]},
-    cervejaStout:{any:["stout","porter","guinness"]},
-    cervejaLager:{any:["cerveja","lager","pilsen","pilsner","helles"],none:["stout","porter","guinness","ginger"]},
+    cervejaStout:{cats:["Cervejas"],any:["stout","porter","guinness"]},
+    cervejaLager:{cats:["Cervejas"],any:["lager","pils","helles","\\bgold\\b","puro malte"],none:["stout","porter","guinness","\\bale\\b","\\bipa\\b"]},
     sidra:{any:["sidra","\\bcider\\b"]},
     sucoTomate:{any:["suco de tomate","tomate"]},
     molhoIngles:{any:["molho ingles","worcestershire","worcester"]},
@@ -2247,7 +2247,8 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     ["Tequila", it=>it.categoria==="Tequila e mezcal", "Pura, com limão e flor de sal"],
     ["Conhaque", it=>/conhaque|cognac|brandy/.test(norm(it.nome+" "+(it.obs||""))) && it.categoria!=="Licores e amaros", "Pura, em taça"],
     ["Outros destilados", it=>it.categoria==="Outros destilados" && !/conhaque|cognac|brandy/.test(norm(it.nome+" "+(it.obs||""))), "Pura"],
-    ["Licores e digestivos", it=>it.categoria==="Licores e amaros" && !/campari|aperol|sem alcool/.test(norm(it.nome+" "+(it.obs||""))), "Puros ou sobre gelo, depois do jantar"]
+    ["Licores e digestivos", it=>it.categoria==="Licores e amaros" && !/campari|aperol|sem alcool/.test(norm(it.nome+" "+(it.obs||""))), "Puros ou sobre gelo, depois do jantar"],
+    ["Cervejas", it=>it.categoria==="Cervejas", "Garrafa de 600 ml, bem gelada"]
   ];
   function doseNote(it){ const o=String(it.obs||"").split(/[;,]/)[0].trim(); if(!o || /garrafa|\d|aberto|nível|nivel|confirmar|geladeira/i.test(o)) return ""; return o.charAt(0).toLowerCase()+o.slice(1); }
   function doseList(ev){
@@ -2259,7 +2260,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
       return {label, how, items};
     }).filter(g=>g.items.length);
   }
-  const doseName = it => "Dose de "+it.nome;
+  const doseName = it => it.categoria==="Cervejas" ? "Cerveja "+it.nome.replace(/^cerveja\s+/i,"") : "Dose de "+it.nome;
   const DOSE_ICE = {"Whisky":1, "Rum":1, "Conhaque":1, "Licores e digestivos":1};
   function doseIceOk(name){ return !!name && /^Dose de /.test(name) && doseList(false).some(g=>DOSE_ICE[g.label] && g.items.some(it=>doseName(it)===name)); }
   function menuBlocks(links){
@@ -2271,7 +2272,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     });
     const dz=doseList(false);
     if(dz.length){
-      blocks.push({type:"section", html:`<div class="m-sec"><h2 class="m-h">Doses</h2><div class="m-sub">Servidas puras, 50 ml</div>${divider(150)}</div>`});
+      blocks.push({type:"section", html:`<div class="m-sec"><h2 class="m-h">Doses</h2><div class="m-sub">${dz.some(g=>g.label==="Cervejas")?"Destilados puros, 50 ml, e cervejas":"Servidas puras, 50 ml"}</div>${divider(150)}</div>`});
       dz.forEach(g=>blocks.push({type:"drink", html:`<div class="m-dose"><div class="m-name">${esc(g.label)}</div><div class="m-ing">${esc(g.how)}</div><ul class="m-dl">${g.items.map(it=>{ const n=doseNote(it); return `<li>${esc(it.nome)}${n?` <i>· ${esc(n)}</i>`:""}</li>`; }).join("")}</ul></div>`}));
     }
     return blocks;
@@ -3819,7 +3820,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
         ${readOnly?"":`<button class="gm-ask" data-ask="${esc(r.n)}">Pedir</button>`}</article>`;
     const secs=bases.filter(b=>cat==="todos"||cat===b).map(b=>{ const list=byMood.filter(r=>r.b===b); if(!list.length) return ""; const m=MENU_META[b]||{t:b,s:""};
       return `<section class="gm-sec"><div class="gm-sec-h"><h2>${esc(m.t)}</h2>${m.s?`<span>${esc(m.s)}</span>`:""}</div><div class="gm-grid">${list.map(card).join("")}</div></section>`; }).join("");
-    const doseSec = (nDoses && (cat==="todos"||cat==="doses")) ? `<section class="gm-sec"><div class="gm-sec-h"><h2>Doses</h2><span>50 ml, servidas puras</span></div>${dz.map(g=>`<div class="gd-grp"><h3>${esc(g.label)}</h3><p class="gd-how">${esc(g.how)}</p><ul class="gd-list">${g.items.map(it=>{ const n=doseNote(it); return `<li><div><b>${esc(it.nome)}</b>${n?`<span>${esc(n)}</span>`:""}</div>${readOnly?"":`<button class="gd-ask" data-ask="${esc(doseName(it))}">Pedir</button>`}</li>`; }).join("")}</ul></div>`).join("")}</section>` : "";
+    const doseSec = (nDoses && (cat==="todos"||cat==="doses")) ? `<section class="gm-sec"><div class="gm-sec-h"><h2>Doses</h2><span>${dz.some(g=>g.label==="Cervejas")?"Destilados puros (50 ml) e cervejas":"50 ml, servidas puras"}</span></div>${dz.map(g=>`<div class="gd-grp"><h3>${esc(g.label)}</h3><p class="gd-how">${esc(g.how)}</p><ul class="gd-list">${g.items.map(it=>{ const n=doseNote(it); return `<li><div><b>${esc(it.nome)}</b>${n?`<span>${esc(n)}</span>`:""}</div>${readOnly?"":`<button class="gd-ask" data-ask="${esc(doseName(it))}">Pedir</button>`}</li>`; }).join("")}</ul></div>`).join("")}</section>` : "";
     return chips + ((secs+doseSec) || `<p class="g-intro">Nenhum drink com esse estilo agora. Toque de novo no filtro para ver todos.</p>`);
   }
   function openDrink(name, kiosk){
