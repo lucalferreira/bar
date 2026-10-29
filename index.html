@@ -578,6 +578,16 @@ body.kiosk-on .main-wrap, body.kiosk-on #addBtn{display:none !important}
 .wa-btn{display:inline-flex;align-items:center;text-decoration:none}
 .wa-btn.off{opacity:.55}
 .g-foot{text-align:center;margin-top:28px}
+.preview-btn{display:inline-flex;align-items:center;gap:7px;margin-top:8px;background:var(--surface2);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.preview-btn[hidden]{display:none}
+.preview-pill{position:fixed;left:12px;right:12px;margin:0 auto;width:fit-content;max-width:520px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:150;display:flex;align-items:center;gap:12px;background:#2a1f18;color:#f6efe5;border-radius:999px;padding:8px 8px 8px 18px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.preview-pill[hidden]{display:none}
+.preview-pill span{display:flex;flex-direction:column;line-height:1.25;min-width:0;flex:1 1 auto}
+.preview-pill b{font-size:14px}
+.preview-pill small{font-size:11.5px;color:#c9b6a2}
+.preview-pill button{flex:0 0 auto;background:#d3a283;color:#2a1f18;border:0;border-radius:999px;padding:9px 14px;font:inherit;font-weight:700;font-size:13.5px;cursor:pointer}
+body.previewing .g-root{padding-bottom:90px}
+
 .gate{position:fixed;inset:0;z-index:200;background:radial-gradient(120% 90% at 50% 20%,#4a382c 0%,#2a1f18 70%);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}
 .gate[hidden]{display:none}
 .gate-card{width:min(420px,100%);background:#f6efe5;color:#3a2a20;border-radius:20px;padding:24px 20px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4);animation:wzIn .4s ease both}
@@ -750,12 +760,17 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
 .gd-how{margin:2px 0 6px;font-size:13px;color:var(--muted);font-style:italic}
 .gd-list{list-style:none;margin:0;padding:0}
 .gd-list li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
-.gd-list li div{display:flex;flex-direction:column;min-width:0}
+.gd-list li div{display:flex;flex-direction:column;min-width:0;flex:1}
+.dz-ic{flex:0 0 22px;display:flex;justify-content:center;align-items:center}
+.dz-ic svg{width:18px;height:auto;max-height:34px}
+.dz-ic svg text{display:none}
 .gd-list span{font-size:12.5px;color:var(--muted)}
 .gd-ask{flex:none;border:1px solid var(--accentFill);background:transparent;color:var(--accent);font-weight:700;border-radius:10px;padding:6px 14px;min-height:36px}
 .m-dose{margin:0 auto 22px;max-width:460px}
 .m-dl{list-style:none;margin:6px 0 0;padding:0}
-.m-dl li{font-size:16.5px;line-height:1.55;color:#4b3a2f}
+.m-dl li{font-size:16.5px;line-height:1.55;color:#4b3a2f;padding:2px 0}
+.m-dl li .dz-ic{display:inline-flex;vertical-align:middle;margin-right:8px}
+.m-dl li .dz-ic svg{width:15px}
 .m-dl i{color:#66745a;font-size:14.5px}
 .pdf-page .m-dose{margin-bottom:14px}
 .pdf-page .m-dl li{font-size:14.5px;line-height:1.42}
@@ -788,12 +803,14 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
   <p class="gate-note">Como visitante, seu histórico fica salvo só neste aparelho. Dá para entrar com uma conta depois, sem perder nada.</p>
 </div></div>
 <div id="guestView" class="wrap g-root" hidden></div>
+<div class="preview-pill" id="previewPill" hidden role="status"><span><b>Visão do convidado</b><small>Pedidos feitos aqui entram na fila de verdade.</small></span><button id="previewExit">Voltar para a casa</button></div>
 <div id="kioskView" class="g-root" hidden></div>
 <div class="wrap main-wrap">
   <header class="top">
     <h1 class="brand brand-lockup"><span id="brandBadge" aria-hidden="true"></span><span class="sr-only">Lucanza's Cocktail Bar</span><small>Estoque de bebidas e insumos</small></h1>
     <div class="status" id="status">Carregando estoque…</div>
     <button class="linkbtn" id="exportBtn" hidden>Baixar cópia para ver sem o app</button>
+    <button class="preview-btn" id="previewBtn" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M1.5 12S5.5 4.5 12 4.5 22.5 12 22.5 12 18.5 19.5 12 19.5 1.5 12 1.5 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg>Ver como convidado</button>
     <div class="site-acts" id="siteActs" hidden><span id="siteWho" class="meta"></span><button class="linkbtn" id="importBtn">Importar backup</button><button class="linkbtn" id="logoutBtn">Sair</button><input type="file" id="importFile" accept=".json,application/json" hidden></div>
   </header>
 
@@ -984,7 +1001,16 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     cream:{body:"M20 28 C31 28 33 40 33 51 C33 64 28 69 20 69 C12 69 7 64 7 51 C7 40 9 28 20 28 Z M17 28 L17 18 L23 18 L23 28", neck:"", cap:[16,11,8,8], top:30, bot:68},
     bitters:{body:"M12 42 Q12 36 17 35 L17 27 L23 27 L23 35 Q28 36 28 42 L28 67 Q28 69 26 69 L14 69 Q12 69 12 67 Z", neck:"", cap:[16,20,8,8], top:37, bot:68},
     swing:{body:"M10 36 Q10 28 17 26 L17 17 L23 17 L23 26 Q30 28 30 36 L30 66 Q30 69 27 69 L13 69 Q10 69 10 66 Z", neck:"", cap:[15,11,10,6], top:28, bot:68, swing:true},
-    pet:{body:"M11 23 Q11 17 16 15 L17 9 L23 9 L24 15 Q29 17 29 23 L29 62 Q29 66 26 69 L14 69 Q11 66 11 62 Z", neck:"", cap:[16,3,8,7], top:17, bot:68, ridges:true}
+    pet:{body:"M11 23 Q11 17 16 15 L17 9 L23 9 L24 15 Q29 17 29 23 L29 62 Q29 66 26 69 L14 69 Q11 66 11 62 Z", neck:"", cap:[16,3,8,7], top:17, bot:68, ridges:true},
+    flask:{body:"M9 27 L13 21 L17 20 L17 11 L23 11 L23 20 L27 21 L31 27 L31 66 Q31 69 28 69 L12 69 Q9 69 9 66 Z", neck:"", cap:[15.5,3,9,9], top:23, bot:68, lab:[11,44,18,16]},
+    tallsquare:{body:"M10 25 Q10 19 15 18 L17 17 L17 8 L23 8 L23 17 L25 18 Q30 19 30 25 L30 67 Q30 69 28 69 L12 69 Q10 69 10 67 Z", neck:"", cap:[16,1,8,8], top:19, bot:68, lab:[12,40,16,20]},
+    decanter:{body:"M20 31 C33 31 34 45 34 55 C34 66 29 69 20 69 C11 69 6 66 6 55 C6 45 7 31 20 31 Z M17 31 L17 23 L23 23 L23 31", neck:"", cap:[13.5,10,13,13], top:33, bot:68, lab:[12,50,16,9], stopper:true},
+    gin:{body:"M8 24 L17 19 L17 10 L23 10 L23 19 L32 24 L32 67 Q32 69 30 69 L10 69 Q8 69 8 67 Z", neck:"", cap:[15.5,2,9,9], top:22, bot:68, lab:[11,40,18,18]},
+    slim:{body:"M13 23 Q13 15 18 14 L18 6 L22 6 L22 14 Q27 15 27 23 L27 67 Q27 69 25 69 L15 69 Q13 69 13 67 Z", neck:"", cap:[17,0,6,7], top:16, bot:68, lab:[14,42,12,16]},
+    longneck:{body:"M10 41 Q10 31 18 28 L18 8 L22 8 L22 28 Q30 31 30 41 L30 67 Q30 69 28 69 L12 69 Q10 69 10 67 Z", neck:"", cap:[17,2,6,7], top:31, bot:68, lab:[11,49,18,12]},
+    tequila:{body:"M7 29 Q8 23 17 22 L17 12 L23 12 L23 22 Q32 23 33 29 L30 66 Q30 69 27 69 L13 69 Q10 69 10 66 Z", neck:"", cap:[14.5,4,11,9], top:25, bot:68, lab:[11,40,18,15]},
+    apothecary:{body:"M10 33 Q10 27 16 26 L17 21 L17 12 L23 12 L23 21 L24 26 Q30 27 30 33 L30 67 Q30 69 28 69 L12 69 Q10 69 10 67 Z", neck:"", cap:[16,5,8,8], top:28, bot:68, lab:[11,42,18,18]},
+    beer:{body:"M11 43 Q11 33 18 29 L18 11 L22 11 L22 29 Q29 33 29 43 L29 67 Q29 69 27 69 L13 69 Q11 69 11 67 Z", neck:"", cap:[17,7,6,5], top:31, bot:68, lab:[12,50,16,11], tint:"rgba(120,70,25,.28)"}
   };
   function shapeFor(it){
     const t=norm(it.nome+" "+(it.obs||"")+" "+(it.marca||"")), c=it.categoria;
@@ -999,9 +1025,21 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     if(/\b2 ?l\b/.test(t) && c==="Mixers e refrigerantes") return "pet";
     if(c==="Bitters") return "bitters";
     if(/caseir/.test(t)) return "swing";
-    if(c==="Whisky") return /bourbon|\brye\b/.test(t) ? "round" : "square";
-    if(c==="Gin"||c==="Vodka"||c==="Tequila e mezcal") return "tall";
-    if(c==="Rum"||c==="Cachaça") return "round";
+    if(c==="Cervejas") return "beer";
+    if(c==="Whisky"){
+      if(/\b(18|21|25|30) anos|royal salute|japones|japanese|hibiki|reserva especial/.test(t)) return "decanter";
+      if(/single malt|glen|singleton|malte/.test(t)) return "tallsquare";
+      if(/bourbon|\brye\b/.test(t)) return "round";
+      if(/tennessee/.test(t)) return "square";
+      if(/blended|scotch|irish|saborizado/.test(t)) return "flask";
+      return "square";
+    }
+    if(c==="Gin") return "gin";
+    if(c==="Vodka") return "slim";
+    if(c==="Tequila e mezcal") return "tequila";
+    if(c==="Cachaça") return "longneck";
+    if(c==="Rum") return "round";
+    if(c==="Licores e amaros" && /campari|aperol|fernet|cynar|averna|amaro|nonino|bitter/.test(t)) return "apothecary";
     if(c==="Vermutes e vinhos"||c==="Cervejas") return "wine";
     if(/amarula|creme/.test(t)) return "cream";
     if(/cointreau/.test(t)) return "square";
@@ -1011,7 +1049,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     if(c==="Mixers e refrigerantes") return "pet";
     return "round";
   }
-  const CAPS = {square:"#5b3a1e", round:"#7a4a22", tall:"#9aa0a7", wine:"#3b2626", squat:"#8a5a2a", cream:"#5b3a1e", bitters:"#7a1f1f", swing:"#c9ccd1", pet:"#9aa0a7"};
+  const CAPS = {flask:"#2b2b2b", tallsquare:"#1f2e24", decanter:"#c9a24a", gin:"#9aa0a7", slim:"#c9ccd1", longneck:"#c9a24a", tequila:"#3b2a1e", apothecary:"#6b1f24", beer:"#c9a24a", square:"#5b3a1e", round:"#7a4a22", tall:"#9aa0a7", wine:"#3b2626", squat:"#8a5a2a", cream:"#5b3a1e", bitters:"#7a1f1f", swing:"#c9ccd1", pet:"#9aa0a7"};
   function eggCarton(level){
     const n=EGGS[level]??15; let eggs="";
     for(let k=0;k<30;k++){ const col=k%5, row=Math.floor(k/5), x=6.5+col*6.8, y=13+row*9.2;
@@ -1114,13 +1152,17 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     const [cx,cy,cw,ch]=S_.cap, sealed=level==="fechada";
     const spark = sh==="wine" && /espumante|brut|prosecco/.test(norm(it.nome+" "+it.obs));
     const capFill = spark ? "#d1ad53" : CAPS[sh];
-    const capEl = spark ? `<path d="M17 3 L23 3 L23.5 24 L16.5 24 Z" fill="#d1ad53" opacity=".95"/>` : `<rect x="${cx}" y="${cy}" width="${cw}" height="${ch}" rx="1.5" fill="${capFill}"/>`;
+    const capEl = spark ? `<path d="M17 3 L23 3 L23.5 24 L16.5 24 Z" fill="#d1ad53" opacity=".95"/>` : S_.stopper ? `<rect x="${cx}" y="${cy}" width="${cw}" height="${ch}" rx="${cw/2}" fill="${capFill}" opacity=".9"/><rect x="${cx+cw/2-2}" y="${cy+ch-1}" width="4" height="3" fill="${capFill}"/>` : `<rect x="${cx}" y="${cy}" width="${cw}" height="${ch}" rx="1.5" fill="${capFill}"/>`;
     const seal = sealed && !spark ? `<rect x="${cx-1}" y="${cy+ch-2.5}" width="${cw+2}" height="3" rx="1" fill="var(--accentFill)"/>` : "";
-    const label = `<rect x="${sh==="bitters"?11:sh==="wine"?13:sh==="tall"?12:10}" y="${sh==="bitters"?44:50}" width="${sh==="bitters"?18:sh==="wine"?14:sh==="tall"?16:20}" height="${sh==="bitters"?20:11}" rx="1.2" fill="var(--surface)" stroke="var(--glass)" stroke-width=".7" opacity=".92"/><path d="M${sh==="bitters"?14:sh==="wine"?15:14} ${sh==="bitters"?50:54} h${sh==="bitters"?12:sh==="wine"?10:12} M${sh==="bitters"?15:sh==="wine"?16:15} ${sh==="bitters"?54:57} h${sh==="bitters"?10:sh==="wine"?8:10}" stroke="var(--glass)" stroke-width=".8"/>`;
+    const hsh=[...String(it.nome||"")].reduce((a,ch)=>(a*31+ch.charCodeAt(0))>>>0,7);
+    const LABC=["var(--surface)","#efe6d2","#1f1a17","#6b1f24","#1f3a5f","#2f4a32","#c9a24a","#f4f1ea"];
+    const labFill=LABC[hsh%LABC.length], dark=/#1f1a17|#6b1f24|#1f3a5f|#2f4a32/.test(labFill), ink=dark?"rgba(246,239,229,.8)":"var(--glass)";
+    const label = S_.lab ? (()=>{ const [lx,ly2,lw,lh]=S_.lab, band=(hsh>>3)%3; return `<rect x="${lx}" y="${ly2}" width="${lw}" height="${lh}" rx="1.4" fill="${labFill}" stroke="var(--glass)" stroke-width=".7" opacity=".95"/>${band===0?`<rect x="${lx}" y="${ly2+2}" width="${lw}" height="1.6" fill="${dark?"#c9a24a":"#96604a"}" opacity=".85"/>`:band===1?`<circle cx="${lx+lw/2}" cy="${ly2+lh*0.38}" r="${Math.min(lw,lh)*0.18}" fill="none" stroke="${dark?"#c9a24a":"#96604a"}" stroke-width=".8"/>`:""}<path d="M${lx+3} ${ly2+lh*0.66} h${lw-6} M${lx+4.5} ${ly2+lh*0.66+2.6} h${lw-9}" stroke="${ink}" stroke-width=".8"/>`; })() : `<rect x="${sh==="bitters"?11:sh==="wine"?13:sh==="tall"?12:10}" y="${sh==="bitters"?44:50}" width="${sh==="bitters"?18:sh==="wine"?14:sh==="tall"?16:20}" height="${sh==="bitters"?20:11}" rx="1.2" fill="${labFill}" stroke="var(--glass)" stroke-width=".7" opacity=".92"/><path d="M${sh==="bitters"?14:sh==="wine"?15:14} ${sh==="bitters"?50:54} h${sh==="bitters"?12:sh==="wine"?10:12} M${sh==="bitters"?15:sh==="wine"?16:15} ${sh==="bitters"?54:57} h${sh==="bitters"?10:sh==="wine"?8:10}" stroke="var(--glass)" stroke-width=".8"/>`;
     const ridges = S_.ridges ? `<path d="M11.5 30 h17 M11.5 34 h17 M11.5 58 h17" stroke="var(--glass)" stroke-width=".6" opacity=".7"/>` : "";
     const swing = S_.swing ? `<path d="M15 14 Q14 20 17 22 M25 14 Q26 20 23 22" stroke="var(--glass)" stroke-width=".9" fill="none"/>` : "";
     return `<svg class="bottle${f===0?" empty":""}" viewBox="0 0 40 72" aria-hidden="true">
       <defs><clipPath id="${id}"><path d="${S_.body}"/></clipPath></defs>
+      ${S_.tint?`<path d="${S_.body}" fill="${S_.tint}"/>`:""}
       ${f>0?`<rect x="0" y="${ly.toFixed(1)}" width="40" height="${(S_.bot-ly+2).toFixed(1)}" fill="${liq}" opacity="${op}" clip-path="url(#${id})"/>`:""}
       ${S_.neck?`<path d="${S_.neck}" fill="none" stroke="var(--glass)" stroke-width="1.4"/>`:""}
       <path class="glass" d="${S_.body}" fill="none" stroke="var(--glass)" stroke-width="1.4" ${f===0?'stroke-dasharray="3 2"':""}/>
@@ -1225,6 +1267,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     if(S.guest){ try{ renderGuest(); }catch(e){ console.error(e); } }
     $("addBtn").hidden = !(S.mode==="ready" && S.canWrite);
     $("exportBtn").hidden = !(S.mode==="ready" && downloads && S.items.length);
+    $("previewBtn").hidden = !(S.mode==="ready" && !S.guest && !S.preview && isHost());
   }
 
   /* ---------- escrita ---------- */
@@ -2408,6 +2451,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
       return {label, how, items};
     }).filter(g=>g.items.length);
   }
+  const doseIcon = it => `<span class="dz-ic">${bottleFor(Object.assign({}, it, {nivel:"cheio", garrafas:1}), "dz")}</span>`;
   const doseName = it => it.categoria==="Cervejas" ? "Cerveja "+it.nome.replace(/^cerveja\s+/i,"") : "Dose de "+it.nome;
   const DOSE_ICE = {"Whisky":1, "Rum":1, "Conhaque":1, "Licores e digestivos":1};
   function doseIceOk(name){ return !!name && /^Dose de /.test(name) && doseList(false).some(g=>DOSE_ICE[g.label] && g.items.some(it=>doseName(it)===name)); }
@@ -2421,7 +2465,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     const dz=doseList(false);
     if(dz.length){
       blocks.push({type:"section", html:`<div class="m-sec"><h2 class="m-h">Doses</h2><div class="m-sub">${dz.some(g=>g.label==="Cervejas")?"Destilados puros, 50 ml, e cervejas":"Servidas puras, 50 ml"}</div>${divider(150)}</div>`});
-      dz.forEach(g=>blocks.push({type:"drink", html:`<div class="m-dose"><div class="m-name">${esc(g.label)}</div><div class="m-ing">${esc(g.how)}</div><ul class="m-dl">${g.items.map(it=>{ const n=doseNote(it); return `<li>${esc(it.nome)}${n?` <i>· ${esc(n)}</i>`:""}</li>`; }).join("")}</ul></div>`}));
+      dz.forEach(g=>blocks.push({type:"drink", html:`<div class="m-dose"><div class="m-name">${esc(g.label)}</div><div class="m-ing">${esc(g.how)}</div><ul class="m-dl">${g.items.map(it=>{ const n=doseNote(it); return `<li>${doseIcon(it)}<span>${esc(it.nome)}${n?` <i>· ${esc(n)}</i>`:""}</span></li>`; }).join("")}</ul></div>`}));
     }
     return blocks;
   }
@@ -3196,6 +3240,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
   function props(it){
     const t=norm(it.nome+" "+(it.obs||"")+" "+(it.marca||"")), c=it.categoria;
     const P=(abv,color,f,extra)=>Object.assign({abv,color,f},extra||{});
+    if(c==="Cervejas") return P(5, /stout|porter/.test(t)?"#2a160b":/\bred\b|ale\b/.test(t)?"#9c3f1a":"#d9a43a", {amargo:1.5,frutado:.5}, {gas:true});
     if(c==="Bitters"){ const fr=/orange|laranja/.test(t)?10:/cereja|cherry|amarena/.test(t)?12:0; return P(44,/cereja|amarena/.test(t)?"#7a1020":"#5a1a10",{amargo:fr?18:25,herbal:fr?4:12,madeira:/aromatic/.test(t)?6:0,frutado:fr,doce:/cereja|amarena/.test(t)?4:0},{dash:true}); }
     if(/sem alcool/.test(t)) return P(0,"#e9d47c",{doce:4,frutado:4});
     if(/campari/.test(t)) return P(25,"#c8102e",{amargo:7,doce:2,frutado:1.5});
@@ -4125,6 +4170,10 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     setGuestTab("menu");
     [600,1500,3500,7000].forEach(ms=>setTimeout(()=>{ if(S.guest && S.gtab!=="lab") renderGuest(); }, ms));
   }
+  function startPreview(){ S.preview=true; S._cw=S.canWrite; S._tab=S.tab; enterGuest(); $("previewPill").hidden=false; document.body.classList.add("previewing"); window.scrollTo(0,0); }
+  function stopPreview(){ S.preview=false; enterHost(); S.canWrite=S._cw!==undefined?S._cw:S.canWrite; $("previewPill").hidden=true; document.body.classList.remove("previewing"); setTab(S._tab||"estoque"); render(); window.scrollTo(0,0); }
+  $("previewBtn").onclick=startPreview;
+  $("previewExit").onclick=stopPreview;
   function enterHost(){ S.guest=false; document.body.classList.remove("booting","guest-mode","gt-lab","gt-menu"); $("guestView").hidden=true; $("guestNav").hidden=true; }
 
   /* ----- convidado ----- */
@@ -4148,7 +4197,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
         ${readOnly?"":`<button class="gm-ask" data-ask="${esc(r.n)}">Pedir</button>`}</article>`;
     const secs=bases.filter(b=>cat==="todos"||cat===b).map(b=>{ const list=byMood.filter(r=>r.b===b); if(!list.length) return ""; const m=MENU_META[b]||{t:b,s:""};
       return `<section class="gm-sec"><div class="gm-sec-h"><h2>${esc(m.t)}</h2>${m.s?`<span>${esc(m.s)}</span>`:""}</div><div class="gm-grid">${list.map(card).join("")}</div></section>`; }).join("");
-    const doseSec = (nDoses && (cat==="todos"||cat==="doses")) ? `<section class="gm-sec"><div class="gm-sec-h"><h2>Doses</h2><span>${dz.some(g=>g.label==="Cervejas")?"Destilados puros (50 ml) e cervejas":"50 ml, servidas puras"}</span></div>${dz.map(g=>`<div class="gd-grp"><h3>${esc(g.label)}</h3><p class="gd-how">${esc(g.how)}</p><ul class="gd-list">${g.items.map(it=>{ const n=doseNote(it); return `<li><div><b>${esc(it.nome)}</b>${n?`<span>${esc(n)}</span>`:""}</div>${readOnly?"":`<button class="gd-ask" data-ask="${esc(doseName(it))}">Pedir</button>`}</li>`; }).join("")}</ul></div>`).join("")}</section>` : "";
+    const doseSec = (nDoses && (cat==="todos"||cat==="doses")) ? `<section class="gm-sec"><div class="gm-sec-h"><h2>Doses</h2><span>${dz.some(g=>g.label==="Cervejas")?"Destilados puros (50 ml) e cervejas":"50 ml, servidas puras"}</span></div>${dz.map(g=>`<div class="gd-grp"><h3>${esc(g.label)}</h3><p class="gd-how">${esc(g.how)}</p><ul class="gd-list">${g.items.map(it=>{ const n=doseNote(it); return `<li>${doseIcon(it)}<div><b>${esc(it.nome)}</b>${n?`<span>${esc(n)}</span>`:""}</div>${readOnly?"":`<button class="gd-ask" data-ask="${esc(doseName(it))}">Pedir</button>`}</li>`; }).join("")}</ul></div>`).join("")}</section>` : "";
     return chips + ((secs+doseSec) || `<p class="g-intro">Nenhum drink com esse estilo agora. Toque de novo no filtro para ver todos.</p>`);
   }
   function openDrink(name, kiosk){
@@ -4195,7 +4244,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
   }
   function guestFootHtml(){
     const legal=`<p class="g-legal">Proibido para menores de 18 anos. Beba com moderação. Se beber, não dirija.${IS_SITE?` · <a href="privacidade.html">Privacidade</a>`:""}</p>`;
-    if(!IS_SITE) return legal;
+    if(!IS_SITE || S.preview) return legal;
     const u=S.siteUser, prov=u&&u.providerData&&u.providerData[0]&&u.providerData[0].providerId;
     const who = u && !u.isAnonymous ? `Você entrou como <b>${esc(u.displayName||u.email||"")}</b> (${prov==="facebook.com"?"Facebook":"Google"}) · <button class="linkbtn" id="gLogout">Sair</button>` : `${guestName()?`Visitante: <b>${esc(guestName())}</b> · `:""}<button class="linkbtn" id="gLoginOpen">Entrar com uma conta</button>`;
     return `<div class="g-me">${who}</div>${legal}`;
