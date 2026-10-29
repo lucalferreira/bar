@@ -123,6 +123,92 @@ h2.cat span{font-family:var(--sans);font-size:13px;color:var(--muted)}
 .toast.show{opacity:1}
 
 .carta-lead{color:var(--muted);font-size:15px;margin:0 0 8px}
+.wz{background:radial-gradient(130% 90% at 50% 0%, #5a4535 0%, #3b2c22 55%, #2a1f18 100%);border-radius:20px;padding:14px 14px 18px;color:#f1e8dc;scroll-margin-top:70px}
+.wz-prog{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:2px 0 10px}
+.wz-prog::-webkit-scrollbar{display:none}
+.wz-p{flex:1 0 auto;min-width:44px;background:none;border:0;color:#bba996;display:flex;flex-direction:column;align-items:center;gap:5px;font:inherit;font-size:11px;padding:2px 3px;cursor:pointer}
+.wz-p i{display:block;width:100%;height:4px;border-radius:3px;background:rgba(241,232,220,.16)}
+.wz-p.done i{background:#d3a283}
+.wz-p.cur i{background:#f6efe5;box-shadow:0 0 0 2px rgba(211,162,131,.45)}
+.wz-p.cur span{color:#f6efe5;font-weight:700}
+.wz-head{display:flex;gap:12px;align-items:center;padding:4px 2px 8px}
+.wz-glass{width:84px;flex:0 0 84px}
+.wz-glass .lab-glass{width:100%}
+.wz-hinfo{display:flex;flex-direction:column;gap:3px;min-width:0}
+.wz-hinfo b{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.15;color:#f6efe5}
+.wz-hinfo span{font-size:13.5px;color:#c9b6a2}
+.wz-mini{display:flex;gap:5px;flex-wrap:wrap;margin-top:3px}
+.wz-mini i{font-style:normal;font-size:11.5px;border:1px solid rgba(211,162,131,.5);color:#e8d3c2;border-radius:999px;padding:2px 8px}
+.wz-mini i.on{background:#d3a283;color:#2a1f18;border-color:#d3a283}
+.wz-card{background:rgba(255,255,255,.04);border:1px solid rgba(241,232,220,.1);border-radius:16px;padding:16px 14px;animation:wzIn .35s ease both}
+@keyframes wzIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.wz-stepn{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#d3a283;font-weight:700}
+.wz-q{font-family:var(--serif);font-weight:400;font-size:25px;line-height:1.2;margin:4px 0 4px;color:#f6efe5}
+.wz-sub{margin:0 0 12px;color:#c9b6a2;font-size:14.5px}
+.wz-crumb{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:13.5px;margin:0 0 10px;color:#c9b6a2}
+.wz-crumb button{background:none;border:0;color:#d3a283;font:inherit;padding:0;text-decoration:underline;cursor:pointer}
+.wz-crumb b{color:#f6efe5}
+.wz-bubs{display:flex;flex-wrap:wrap;gap:9px}
+.wz-b{position:relative;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-width:92px;max-width:100%;padding:11px 16px;border-radius:22px;border:1.5px solid rgba(211,162,131,.55);background:rgba(42,31,24,.6);color:#f6efe5;font:inherit;cursor:pointer;animation:wzPop .38s cubic-bezier(.2,1.4,.4,1) both;transition:transform .12s ease, background .2s ease}
+.wz-b:active{transform:scale(.96)}
+@keyframes wzPop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+.wz-b .wz-bl{font-weight:700;font-size:15px;line-height:1.2;text-align:center}
+.wz-b .wz-bs{font-size:12px;color:#c9b6a2;margin-top:2px;text-align:center}
+.wz-b .wz-ic{font-size:20px;line-height:1;margin-bottom:4px}
+.wz-b.bottle{flex-direction:row;gap:8px;align-items:center;padding:8px 14px 8px 10px;text-align:left}
+.wz-b.bottle svg.bottle{width:20px;height:auto;flex:0 0 20px}
+.wz-b.bottle .wz-bl,.wz-b.bottle .wz-bs{text-align:left}
+.wz-b.bottle{display:inline-grid;grid-template-columns:20px auto;column-gap:9px}
+.wz-b.bottle svg{grid-row:span 2}
+.wz-b.sel{background:#d3a283;border-color:#f6efe5;color:#2a1f18}
+.wz-b.sel .wz-bs{color:#4b3a2f}
+.wz-b.fit:not(.sel){border-color:#e8c27a;box-shadow:0 0 0 3px rgba(232,194,122,.18)}
+.wz-b.fit::after{content:"combina";position:absolute;top:-8px;right:10px;background:#e8c27a;color:#2a1f18;font-size:10px;font-weight:700;border-radius:999px;padding:1px 7px}
+.wz-b.hint:not(.sel){border-style:dashed;border-color:#f6efe5}
+.wz-b.rm{border-color:rgba(214,120,100,.8);color:#f3b4a6}
+.wz-opts{display:grid;gap:8px}
+.wz-o{text-align:left;border:1.5px solid rgba(211,162,131,.4);background:rgba(42,31,24,.55);color:#f6efe5;border-radius:14px;padding:12px 14px;font:inherit;display:flex;flex-direction:column;gap:3px;cursor:pointer;animation:wzPop .35s ease both}
+.wz-o b{font-size:15.5px}
+.wz-o b em{font-style:normal;font-size:11px;font-weight:700;background:#e8c27a;color:#2a1f18;border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:2px}
+.wz-o span{font-size:13.5px;color:#c9b6a2}
+.wz-o.sel{background:#d3a283;color:#2a1f18;border-color:#f6efe5}
+.wz-o.sel span{color:#4b3a2f}
+.wz-chosen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.wz-chip{display:inline-flex;gap:8px;align-items:center;background:#f6efe5;color:#2a1f18;border:0;border-radius:999px;padding:6px 12px;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
+.wz-chip span{opacity:.6}
+.wz-dose{border:1px solid rgba(241,232,220,.12);border-radius:14px;padding:12px;background:rgba(0,0,0,.12)}
+.wz-dh b{display:block;font-size:16px;color:#f6efe5}
+.wz-dh span{font-size:13px;color:#c9b6a2}
+.wz-dq{margin:10px 0 8px;font-size:14px;color:#e8d3c2}
+.wz-ins{display:grid;gap:8px;margin:14px 0 0}
+.wz-tip{display:flex;gap:10px;align-items:flex-start;background:rgba(232,194,122,.1);border:1px solid rgba(232,194,122,.28);border-radius:14px;padding:10px 12px;animation:wzIn .4s ease both}
+.wz-tip span{color:#e8c27a;font-size:14px;line-height:1.5}
+.wz-tip p{margin:0;font-size:14px;line-height:1.45;color:#f1e8dc}
+.wz-tip b{color:#f6d9a8}
+.wz-nav{display:flex;justify-content:space-between;gap:10px;margin-top:16px}
+.wz-nav .ghost{background:transparent;color:#e8d3c2;border-color:rgba(241,232,220,.25)}
+.wz-nav .ghost.strong{color:#f6efe5;border-color:rgba(241,232,220,.5)}
+.wz-nav .primary[disabled]{opacity:.35}
+.wz-empty{color:#c9b6a2;font-size:14.5px}
+.wz-match{margin-top:12px;font-size:14px;color:#e8d3c2}
+.wz-match .linkbtn{color:#e8c27a}
+.wz-idea{margin-top:14px}
+.wz-idea .idea{background:rgba(255,255,255,.06);border-color:rgba(241,232,220,.15);color:#f1e8dc}
+.wz-peek{display:block;margin:12px auto 0}
+.wz-list{display:grid;gap:7px}
+@media (min-width:640px){.wz-list{grid-template-columns:1fr 1fr}}
+.wz-row{display:flex;align-items:center;gap:12px;text-align:left;border:1.5px solid rgba(211,162,131,.35);background:rgba(42,31,24,.55);color:#f6efe5;border-radius:14px;padding:9px 12px;font:inherit;cursor:pointer;animation:wzIn .3s ease both}
+.wz-row:active{transform:scale(.99)}
+.wz-ri{flex:0 0 26px;display:flex;justify-content:center}
+.wz-ri svg{width:22px;height:auto;max-height:44px}
+.wz-rt{flex:1;min-width:0;display:flex;flex-direction:column}
+.wz-rt b{font-size:15px;line-height:1.25}
+.wz-rt b em{font-style:normal;font-size:10.5px;font-weight:700;background:#e8c27a;color:#2a1f18;border-radius:999px;padding:1px 7px;margin-left:4px;vertical-align:2px}
+.wz-rt small{font-size:12.5px;color:#c9b6a2}
+.wz-rq{flex:0 0 auto;font-weight:700;font-size:14px;color:#d3a283;min-width:22px;text-align:right}
+.wz-row.sel{background:#d3a283;color:#2a1f18;border-color:#f6efe5}
+.wz-row.sel small{color:#4b3a2f}.wz-row.sel .wz-rq{color:#2a1f18}
+
 .site-acts{display:flex;gap:14px;align-items:center;margin-top:6px;flex-wrap:wrap}
 .g-mine{margin-top:26px}.g-mine .g-order{flex-wrap:wrap}
 .g-again{margin-left:auto}
@@ -492,6 +578,34 @@ body.kiosk-on .main-wrap, body.kiosk-on #addBtn{display:none !important}
 .wa-btn{display:inline-flex;align-items:center;text-decoration:none}
 .wa-btn.off{opacity:.55}
 .g-foot{text-align:center;margin-top:28px}
+.gate{position:fixed;inset:0;z-index:200;background:radial-gradient(120% 90% at 50% 20%,#4a382c 0%,#2a1f18 70%);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}
+.gate[hidden]{display:none}
+.gate-card{width:min(420px,100%);background:#f6efe5;color:#3a2a20;border-radius:20px;padding:24px 20px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4);animation:wzIn .4s ease both}
+.gate-logo{display:flex;justify-content:center;margin-bottom:6px}
+.gate-logo svg{max-width:220px;height:auto}
+.gate-card h2{font-family:var(--serif);font-weight:400;font-size:26px;margin:6px 0 8px}
+.gate-card p{font-size:15px;line-height:1.45;margin:0 0 14px;color:#5a4a3e}
+.gate-dob{display:flex;justify-content:center;align-items:center;gap:8px;margin:6px 0 12px}
+.gate-dob input{width:58px;text-align:center;font:inherit;font-size:20px;padding:10px 6px;border:1.5px solid #d3c3b0;border-radius:12px;background:#fff;color:#3a2a20}
+.gate-dob input.y{width:86px}
+.gate-dob span{color:#9a8878;font-size:20px}
+.gate-rem{display:flex;gap:8px;align-items:center;justify-content:center;font-size:13.5px;color:#6b5a4c;margin-bottom:14px}
+.gate-card .primary{width:100%;padding:13px;font-size:16px}
+.gate-err{color:#a8483a;font-weight:600;min-height:20px;margin:10px 0 0!important}
+.gate-legal{font-size:12px!important;color:#8a7868!important;margin:8px 0 0!important}
+.gate-note{font-size:12.5px!important;color:#8a7868!important;margin:10px 0 0!important}
+.wel-btns{display:grid;gap:8px;margin:4px 0 6px}
+.wel-g,.wel-f{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:12px;border-radius:12px;font:inherit;font-weight:600;font-size:15.5px;cursor:pointer}
+.wel-g{background:#fff;color:#3c4043;border:1.5px solid #dadce0}
+.wel-f{background:#1877f2;color:#fff;border:0}
+.wel-f[hidden],.wel-g[hidden]{display:none}
+.wel-or{display:flex;align-items:center;gap:10px;color:#9a8878;font-size:13px;margin:14px 0 6px}
+.wel-or::before,.wel-or::after{content:"";flex:1;height:1px;background:#d9cbb9}
+.gate-card .g-name{text-align:left}
+.gate-card .ghost{width:100%;margin-top:8px}
+.g-me{display:flex;justify-content:center;gap:10px;align-items:center;flex-wrap:wrap;font-size:13.5px;color:var(--muted);margin:22px 0 4px}
+.g-legal{text-align:center;font-size:12px;color:var(--muted);margin:6px 0 0}
+
 /* ---------- modo convidado: só cardápio e laboratório ---------- */
 body.booting .main-wrap, body.booting #addBtn{visibility:hidden}
 body.guest-mode #addBtn, body.guest-mode .toolbar-host{display:none !important}
@@ -653,6 +767,26 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
 </style>
 </head>
 <body class="booting">
+<div id="ageGate" class="gate" hidden role="dialog" aria-modal="true" aria-labelledby="gateT"><div class="gate-card">
+  <div class="gate-logo" id="gateLogo"></div>
+  <h2 id="gateT">Bem-vindo ao Lucanza's</h2>
+  <p>Este site é sobre bebidas alcoólicas e é destinado apenas a maiores de 18 anos. Para continuar, informe sua data de nascimento.</p>
+  <div class="gate-dob" role="group" aria-label="Data de nascimento"><input id="gDia" inputmode="numeric" maxlength="2" placeholder="DD" aria-label="Dia" autocomplete="bday-day"><span>/</span><input id="gMes" inputmode="numeric" maxlength="2" placeholder="MM" aria-label="Mês" autocomplete="bday-month"><span>/</span><input id="gAno" inputmode="numeric" maxlength="4" placeholder="AAAA" aria-label="Ano" autocomplete="bday-year" class="y"></div>
+  <label class="gate-rem"><input type="checkbox" id="gRemember" checked> Lembrar neste aparelho por 30 dias</label>
+  <button class="primary" id="gateOk">Entrar</button>
+  <p class="gate-err" id="gateErr" role="alert"></p>
+  <p class="gate-legal">Proibida a venda e a oferta de bebidas alcoólicas a menores de 18 anos. Beba com moderação. Se beber, não dirija.</p>
+</div></div>
+<div id="welcome" class="gate" hidden role="dialog" aria-modal="true" aria-labelledby="welT"><div class="gate-card">
+  <div class="gate-logo" id="welLogo"></div>
+  <h2 id="welT">Como você quer entrar?</h2>
+  <p>Entrando com sua conta, seus pedidos e as notas que você der ficam guardados em qualquer aparelho.</p>
+  <div class="wel-btns"><button class="wel-g" id="welGoogle"><svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Continuar com Google</button><button class="wel-f" id="welFacebook" hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg>Continuar com Facebook</button></div>
+  <div class="wel-or"><span>ou</span></div>
+  <label class="g-name"><span>Entrar só com o seu nome</span><input id="welName" class="search" maxlength="30" placeholder="Como devemos chamar você?" autocomplete="given-name"></label>
+  <button class="ghost" id="welGuest">Entrar como visitante</button>
+  <p class="gate-note">Como visitante, seu histórico fica salvo só neste aparelho. Dá para entrar com uma conta depois, sem perder nada.</p>
+</div></div>
 <div id="guestView" class="wrap g-root" hidden></div>
 <div id="kioskView" class="g-root" hidden></div>
 <div class="wrap main-wrap">
@@ -786,7 +920,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
 <div class="timer-pill" id="timerPill" hidden role="timer" aria-live="polite"><b id="tmTxt"></b><button id="tmStop" aria-label="Parar cronômetro">×</button><i id="tmBar"></i></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script>window.SITE={"config": {"apiKey": "AIzaSyA3XIExNEA61yEPEC6aCs1wJ8WxiOW7hzs", "authDomain": "lucanza-s-cocktail-bar.firebaseapp.com", "projectId": "lucanza-s-cocktail-bar", "storageBucket": "lucanza-s-cocktail-bar.firebasestorage.app", "messagingSenderId": "217886636545", "appId": "1:217886636545:web:4d635dd66be31915561e00", "measurementId": "G-H9HRE5ZTE2"}, "url": "https://lucalferreira.github.io/bar/", "owners": {"luca.empolga@gmail.com": {"name": "Luca Lisboa", "legacyId": "u__TjztFt1EvkXet5YqoOibA"}, "hananza@gmail.com": {"name": "Hananza"}}};</script>
+<script>window.SITE={"config": {"apiKey": "AIzaSyA3XIExNEA61yEPEC6aCs1wJ8WxiOW7hzs", "authDomain": "lucanza-s-cocktail-bar.firebaseapp.com", "projectId": "lucanza-s-cocktail-bar", "storageBucket": "lucanza-s-cocktail-bar.firebasestorage.app", "messagingSenderId": "217886636545", "appId": "1:217886636545:web:4d635dd66be31915561e00", "measurementId": "G-H9HRE5ZTE2"}, "url": "https://lucanzasbar.com.br/", "owners": {"luca.empolga@gmail.com": {"name": "Luca Lisboa", "legacyId": "u__TjztFt1EvkXet5YqoOibA"}, "hananza@gmail.com": {"name": "Hananza"}}};</script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
@@ -3024,7 +3158,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     {id:"mod", label:"Modificador", kind:"items", unit:"ml", doses:[5,7.5,15,22.5,30,45], dflt:22.5,
      filter:it=>(it.categoria==="Licores e amaros" || (it.categoria==="Vermutes e vinhos" && !isSpark(it))), tip:"Vermutes, amaros e licores dão corpo, doçura ou amargor. Comece com pouco: 15 a 30 ml."},
     {id:"acid", label:"Cítrico & doce", kind:"items", unit:"ml", doses:[5,7.5,15,22.5,30], dflt:22.5, egg:true,
-     filter:it=>it.categoria==="Xaropes" || (it.categoria==="Frutas e ervas" && !/hortela|menta/.test(norm(it.nome))), tip:"O par limão e açúcar é o coração dos sours. Com xarope 2:1, use cerca de metade da medida de limão."},
+     filter:it=>it.categoria==="Xaropes" || (it.categoria==="Frutas e ervas" && !/hortela|menta|manjeric|alecrim|tomilho|salvia/.test(norm(it.nome))), tip:"O par limão e açúcar é o coração dos sours. Com xarope 2:1, use cerca de metade da medida de limão."},
     {id:"bitter", label:"Bitter", kind:"items", unit:"dash", doses:[1,2,3,4], dflt:2,
      filter:it=>it.categoria==="Bitters", tip:"Bitter é tempero, como sal e pimenta: de 1 a 3 dashes."},
     {id:"top", label:"Complemento", kind:"items", unit:"ml", doses:[30,60,90,120,150], dflt:90,
@@ -3476,7 +3610,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     const glass = glassTypeOf(r);
     const ice = ({esfera:"esfera", cubo:"cubo", cubos:"pedras", picado:"picado", sem:"sem"})[r.gelo] || (["coupe","martini","flute"].includes(glass) ? "sem" : glass==="rocks" ? "cubo" : "pedras");
     const garnish = /casca de laranja/.test(g) ? "cascaLaranja" : /casca de limao/.test(g) ? "cascaLimao" : /rodela de laranja|meia rodela/.test(g) ? "rodelaLaranja" : /rodela de limao/.test(g) ? "rodelaLimao" : /cereja/.test(g) ? "cereja" : /azeitona/.test(g) ? "azeitona" : /hortela/.test(g) ? "hortela" : "nenhuma";
-    Object.assign(LAB,{sel:P.sel, egg:P.egg, method, glass, ice, garnish, fl:null, done:{base:1,mod:1,acid:1,bitter:1,top:1}});
+    Object.assign(LAB,{sel:P.sel, egg:P.egg, method, glass, ice, garnish, fl:null, done:{base:1,mod:1,acid:1,bitter:1,top:1}, wz:{step:"fim",path:[],item:null,vibeDone:true}});
     renderLab();
     toast(`Agora é um ${r.n}, nas medidas clássicas.`);
     if(r.a) setTimeout(()=>openPlayer(r.n), 700);
@@ -3640,38 +3774,184 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     const I=LAB._idea; if(!I) return;
     const sel={}; I.items.forEach(x=>{ sel[x.it.id]={step:x.step, q:x.q}; });
     Object.assign(LAB,{sel, egg:false, method:I.method, glass:I.glass, ice:I.ice, garnish:I.garnish, fl:null, done:{base:1,mod:1,acid:1,bitter:1,top:1}});
-    LAB.ideaName=I.nome; renderLab(); toast(`${I.nome} montado. Ajuste as doses à vontade.`);
+    LAB.ideaName=I.nome; LAB.wz={step:"fim",path:[],item:null,vibeDone:true}; renderLab(); toast(`${I.nome} montado. Toque numa etapa para ajustar.`);
   }
-  function renderLab(){
-    const box=$("labView"); if(!box) return;
-    if(!hasData()){ box.innerHTML=""; return; }
-    const R=labCompute(), match=labMatch();
-    const n=LAB_STEPS.length, next=LAB_STEPS.findIndex(s=>!stepDone(s));
-    const bubbles=LAB_STEPS.map((st,i)=>{
-      const a=(-90+i*360/n)*Math.PI/180, x=50+40*Math.cos(a), y=50+40*Math.sin(a);
-      const v=stepValue(st), done=stepDone(st);
-      return `<button class="lab-bub${done?" done":""}${i===next?" next":""}" data-step="${st.id}" style="left:${x.toFixed(2)}%;top:${y.toFixed(2)}%;animation-delay:${(i*0.37).toFixed(2)}s">
-        <span class="lb-n">${i+1}</span><span class="lb-l">${esc(st.label)}</span><span class="lb-v">${esc(v||"Escolher")}</span></button>`;
-    }).join("");
-    const spokes=LAB_STEPS.map((st,i)=>{ const a=(-90+i*360/n)*Math.PI/180; return `<line x1="${(50+19*Math.cos(a)).toFixed(2)}" y1="${(50+19*Math.sin(a)).toFixed(2)}" x2="${(50+33*Math.cos(a)).toFixed(2)}" y2="${(50+33*Math.sin(a)).toFixed(2)}" class="${stepDone(st)?"on":""}"/>`; }).join("");
-    const title = match ? (match.kind==="exato" ? `Isso é um ${match.n}` : `Lembra um ${match.n}`) : (R.vol ? (LAB.ideaName || "Criação da casa") : "Monte seu drink");
-    const bars = DIMS.map(([k,l])=>{ const t=LAB.target.includes(k); return `<div class="lab-bar${t?" want":""}"><span>${l}${t?" <em>desejado</em>":""}</span><i><b style="width:${(R.scores[k]/5*100).toFixed(0)}%"></b>${t?`<u style="left:48%"></u>`:""}</i></div>`; }).join("");
+  /* ---------- laboratório guiado (passo a passo) ---------- */
+  const VIBES=[["doce","Doce","🍯"],["acido","Cítrico","🍋"],["amargo","Amargo","🌿"],["herbal","Herbal","🌱"],["frutado","Frutado","🍒"],["madeira","Amadeirado","🪵"],["leve","Leve e refrescante","🫧"],["forte","Forte e marcante","🥃"]];
+  const WZ_ORDER=["vibe","base","mod","acid","bitter","top","method","glass","ice","garnish","fim"];
+  const WZ_Q={
+    vibe:["Que tipo de drink você quer hoje?","Escolha até 3 sensações e eu vou sugerindo o caminho em cada etapa. Ou siga livre."],
+    base:["Qual vai ser a base?","O destilado principal do drink. De 45 a 60 ml é a dose clássica."],
+    mod:["Quer um modificador?","Vermutes, amaros e licores dão corpo, doçura ou amargor. É opcional."],
+    acid:["Cítrico e doce?","Limão e açúcar são o coração dos sours. A clara deixa tudo sedoso."],
+    bitter:["Um toque de bitter?","Bitter é tempero: de 1 a 3 dashes mudam o drink inteiro."],
+    top:["Vai alongar o drink?","Tônica, água com gás, refrigerante ou espumante completam no copo e deixam mais leve."],
+    method:["Como vamos preparar?","Já marquei o que combina com a sua mistura."],
+    glass:["Em qual copo?","O copo muda a temperatura, o aroma e o visual."],
+    ice:["E o gelo?","Define a diluição: quanto maior a pedra, mais devagar ela derrete."],
+    garnish:["Para finalizar, a guarnição","O primeiro aroma que chega ao nariz."],
+    fim:["",""]
+  };
+  if(!LAB.wz) LAB.wz={step:"vibe", path:[], item:null};
+  LAB.vibe = LAB.vibe || {leve:false, forte:false};
+  function wzSt(id){ return LAB_STEPS.find(s=>s.id===id); }
+  function baseFam(it){ const t=norm(it.nome+" "+(it.obs||"")); if(it.categoria==="Tequila e mezcal") return "Tequila"; if(it.categoria==="Outros destilados") return /conhaque|cognac|brandy/.test(t)?"Conhaque":/pisco/.test(t)?"Pisco":"Outros"; return it.categoria; }
+  function wzBottles(st){
+    const seen=new Map();
+    S.items.filter(it=>available(it) && st.filter(it) && !(st.id!=="top" && isCounted(it) && it.categoria==="Mixers e refrigerantes"))
+      .sort((a,b)=>(LVORDER[a.nivel]??9)-(LVORDER[b.nivel]??9)).forEach(it=>{ const k=norm(it.nome); if(!seen.has(k)) seen.set(k,it); });
+    return [...seen.values()];
+  }
+  // árvore de escolha: nível 1 (família), nível 2 (tipo, se houver mais de um), nível 3 (garrafas)
+  function wzLevels(st){
+    const items=wzBottles(st);
+    const l1 = st.id==="base" ? baseFam : (it=>flType(st,it));
+    const l2 = st.id==="base" ? (it=>it.categoria==="Whisky" ? flType(st,it) : null) : (()=>null);
+    const groups=[];
+    items.forEach(it=>{ const k=l1(it); let g=groups.find(x=>x.k===k); if(!g){ g={k, items:[]}; groups.push(g); } g.items.push(it); });
+    groups.forEach(g=>{ const subs=[]; g.items.forEach(it=>{ const k=l2(it); if(!k) return; let s=subs.find(x=>x.k===k); if(!s){ s={k,items:[]}; subs.push(s);} s.items.push(it); }); g.subs = subs.length>1 ? subs : null; });
+    const order = st.id==="base" ? ["Whisky","Gin","Vodka","Rum","Cachaça","Tequila","Conhaque","Pisco","Outros"] : [];
+    groups.sort((a,b)=>{ const fa=groupFit(a.items), fb=groupFit(b.items); if(LAB.target.length && Math.abs(fa-fb)>0.2) return fb-fa; const ia=order.indexOf(a.k), ib=order.indexOf(b.k); return (ia<0?99:ia)-(ib<0?99:ib) || a.k.localeCompare(b.k); });
+    return groups;
+  }
+  function groupFit(items){ return LAB.target.length ? Math.max(0,...items.map(fitScore)) : 0; }
+  function wzHasAlc(){ return labItems().filter(x=>x.p.abv>=15 && !x.p.dash); }
+  function wzRecommend(stepId, R){
+    const L=labItems(), hasAcid=L.some(x=>x.p.f.acido>5), top=L.find(x=>x.step==="top"), spark=top&&isSpark(top.it);
+    if(stepId==="method"){ if(LAB.egg) return ["dry","tem clara de ovo: bater sem gelo primeiro monta a espuma"]; if(hasAcid) return ["batido","tem cítrico: bater integra, aera e deixa a textura viva"]; if(top && !L.some(x=>x.step==="mod")) return ["montado","é um drink longo e simples: monta direto no copo"]; if(top) return ["montado","o complemento com gás entra direto no copo"]; return ["mexido","só destilados e licores: mexer deixa o drink sedoso e límpido"]; }
+    if(stepId==="glass"){ if(spark && !hasAcid) return ["wine","espumante com gelo pede taça de vinho, como um spritz"]; if(spark) return ["flute","completado com espumante, servido sem gelo"]; if(top) return ["highball","drink longo, com complemento"]; if(LAB.method==="mexido" && !LAB.vibe.forte) return ["coupe","mexido e servido sem gelo, numa taça gelada"]; return ["rocks","no copo baixo, sobre uma pedra grande de gelo"]; }
+    if(stepId==="ice"){ const g=LAB.glass; if(["coupe","martini","flute"].includes(g)) return ["sem","taça pede drink servido sem gelo"]; if(g==="highball"||g==="wine") return ["pedras","copo alto se completa com gelo em cubos"]; if(LAB.method==="mexido") return ["esfera","esfera dilui bem devagar, ideal para bebericar"]; return ["cubo","cubo grande gela sem aguar"]; }
+    if(stepId==="garnish"){ const t=norm(L.map(x=>x.it.nome+" "+x.it.categoria).join(" ")); if(/hortela|menta/.test(t)) return ["hortela","já tem hortelã: o ramo reforça o aroma"]; if(top && /tonica|soda|gas/.test(t)) return ["rodelaLimao","rodela de limão é a cara dos highballs"]; if(/gin|vermute seco|extra dry|dry\b/.test(t)) return ["cascaLimao","casca de limão realça os botânicos"]; if(/campari|aperol|whisky|bourbon|rye|laranja|cointreau|rum/.test(t)) return ["cascaLaranja","casca de laranja conversa com notas amadeiradas e amargas"]; if(/rosso/.test(t) && LAB.method==="mexido") return ["cereja","cereja é o par clássico de mexidos com vermute"]; return ["cascaLimao","um toque cítrico perfuma qualquer drink"]; }
+    return null;
+  }
+  function pct(v){ return Math.round(v)+"%"; }
+  function wzInsights(stepId, R){
+    const out=[], L=labItems(), s=R.scores, alc=wzHasAlc(), alcMl=alc.reduce((a,x)=>a+x.q,0), bases=L.filter(x=>x.step==="base");
+    const hasAcid=L.some(x=>x.p.f.acido>5), hasSweet=L.some(x=>x.p.f.doce>=8), hasTop=L.some(x=>x.step==="top");
+    const T=LAB.target, want=d=>T.includes(d);
+    const pick=(re)=>{ const rs=Array.isArray(re)?re:[re]; for(const r of rs){ const f=S.items.find(i=>available(i)&&r.test(norm(i.nome+" "+(i.obs||"")))); if(f) return f; } return null; };
+    if(stepId==="vibe") return out;
+    if(stepId==="base"){
+      if(!bases.length){
+        if(T.length){ const fams=rankedFamilies(T).slice(0,3); if(fams.length) out.push(`Para um drink ${orList(T.map(d=>ADJ[d])).replace(/ ou (?=[^,]*$)/," e ")}, as bases que mais combinam estão marcadas com <b>combina</b>: ${orList(fams.map(f=>famLabel(f.fam)))}.`); }
+        else out.push("Sem pressa: toque numa família para ver as garrafas. Dá para combinar duas bases, como bourbon e rye.");
+        if(LAB.vibe.leve) out.push("Para algo leve, 30 a 45 ml de base já bastam.");
+      } else {
+        if(bases.length>1 && alcMl>75) out.push(`Duas bases somando ${fmtN(alcMl)} ml: vai ficar bem forte. Experimente 30 ml de cada.`);
+        else if(alcMl>=60 && LAB.vibe.leve) out.push(`${fmtN(alcMl)} ml de destilado é bastante para um drink leve. Que tal 40 a 45 ml?`);
+        else out.push(`Base escolhida. ${T.length?"Na próxima etapa eu indico o que puxa o drink para o perfil que você quer.":"Agora é a hora de decidir o estilo: encorpado com um modificador, ou fresco com cítrico."}`);
+      }
+    }
+    if(stepId==="mod"){
+      if(alcMl>=60 || (R.abv>30 && R.vol)) out.push(`Sua mistura já tem ${fmtN(alcMl)} ml de destilado. Para não pesar, prefira um modificador de baixo teor, como vermute (cerca de 16%) ou Aperol (11%), em até 20 ml. Ou pule esta etapa.`);
+      if(want("amargo")){ const b=pick(/campari|cynar|fernet|aperol/); if(b) out.push(`Para o lado amargo, <b>${esc(b.nome)}</b> é o caminho mais direto.`); }
+      if(want("doce") && !want("amargo")){ const b=pick(/licor 43|amaretto|cointreau|ginja/); if(b) out.push(`Para adoçar com personalidade, experimente 15 ml de <b>${esc(b.nome)}</b>.`); }
+      if(want("herbal")){ const b=pick(/extra dry|\bdry\b|chartreuse|fernet/); if(b) out.push(`Para o herbal, <b>${esc(b.nome)}</b> traz ervas sem pesar.`); }
+      if(!T.length && !out.length) out.push("Vermute rosso deixa o drink redondo, como num Manhattan; Campari puxa para o Negroni; um licor adoça com sabor.");
+    }
+    if(stepId==="acid"){
+      const juice=L.find(x=>/limao/.test(norm(x.it.nome))), syr=L.find(x=>x.p.f.doce>=8 && x.step==="acid");
+      if(juice && !syr && !L.some(x=>x.step==="mod" && x.p.f.doce>=3)) out.push("Você escolheu limão sem nada doce: o drink vai ficar muito ácido. Junte 15 a 20 ml de xarope.");
+      else if(syr && !juice && !hasAcid) out.push("Xarope sem cítrico deixa o drink doce e pesado. Se não for um Old Fashioned, junte limão.");
+      else if(juice && syr) out.push("Cítrico e doce juntos: bater na coqueteleira vai ser o método recomendado.");
+      if(R.abv>28 && !juice) out.push(`Está forte (cerca de ${pct(R.abv)} de álcool). Limão e açúcar ajudam a suavizar e refrescar.`);
+      if(want("acido") && !juice){ const j=pick([/suco de limao/,/limao/]); if(j) out.push(`Para o cítrico que você quer, comece com 22,5 ml de <b>${esc(j.nome)}</b>.`); }
+      if(want("doce") && !syr){ const sy=pick([/xarope de acucar/,/xarope de mel/,/\bmel\b/]); if(sy) out.push(`Para o doce, 10 a 15 ml de <b>${esc(sy.nome)}</b>.`); }
+      if(!out.length) out.push("Se for fazer um sour, a proporção segura é 2 de base, 1 de limão e meio de xarope 2:1.");
+    }
+    if(stepId==="bitter"){
+      if(s.madeira>=2.5) out.push("Destilado amadeirado adora Angostura: 2 dashes já dão profundidade.");
+      if(hasAcid) out.push("Em sours, o bitter é opcional; algumas gotas por cima da espuma perfumam o drink.");
+      if(!out.length) out.push("Se estiver em dúvida, 2 dashes de Angostura nunca erram. Pode pular também.");
+    }
+    if(stepId==="top"){
+      if(R.vol && R.abv>22){ const proj=R.final? (R.final*R.abv/100)/(R.final+90)*100 : 0; out.push(`Está com cerca de ${pct(R.abv)} de álcool. Completar com 90 ml baixa para uns ${pct(proj)}, num drink longo e refrescante.`); }
+      if(LAB.vibe.leve && !hasTop) out.push("Você pediu algo leve: um complemento com gás é o jeito mais fácil de chegar lá.");
+      if(LAB.vibe.forte && !hasTop) out.push("Para um drink forte e marcante, pule esta etapa.");
+      if(hasAcid && !LAB.vibe.forte) out.push("Com limão e açúcar, água com gás vira um Collins; espumante vira um French 75.");
+    }
+    if(["method","glass","ice","garnish"].includes(stepId)){
+      const rec=wzRecommend(stepId,R); const st=wzSt(stepId);
+      if(rec){ const o=st.options.find(o=>o.v===rec[0]); if(o) out.push(`Recomendo <b>${esc(o.l.toLowerCase())}</b>: ${esc(rec[1])}.`); }
+      const cur=LAB[stepId]; if(cur && rec && cur!==rec[0]){ const t=labTips(R).find(x=>true); if(t) out.push(esc(t)); }
+    }
+    if(T.length && ["mod","acid","bitter","top"].includes(stepId) && R.vol){ const a=labAdvice(R).filter(x=>!/^Escolha/.test(x)); a.slice(0,1).forEach(x=>{ if(!out.some(o=>o===x)) out.push(x); }); }
+    return out.slice(0,2);
+  }
+  function wzValue(id){
+    if(id==="vibe"){ const v=LAB.target.map(d=>ADJ[d]).concat(LAB.vibe.leve?["leve"]:[],LAB.vibe.forte?["forte"]:[]); return v.length? v.join(", ") : (LAB.wz.vibeDone?"Livre":""); }
+    const st=wzSt(id); return st ? stepValue(st) : "";
+  }
+  function wzLabel(id){ return id==="vibe" ? "Estilo" : (wzSt(id)||{}).label || ""; }
+  function wzGo(id){ LAB.wz={step:id, path:[], item:null, vibeDone:LAB.wz.vibeDone}; const st=wzSt(id); if(st && st.kind==="choice" && !LAB[id]){ const rec=wzRecommend(id, labCompute()); if(rec) LAB[id]=rec[0]; } renderLab(); const s=document.querySelector("#labView .wz"); if(s) s.scrollIntoView({behavior:"smooth", block:"start"}); }
+  function wzNext(){ const i=WZ_ORDER.indexOf(LAB.wz.step); const st=wzSt(LAB.wz.step); if(st && st.kind==="items") LAB.done[st.id]=true; if(LAB.wz.step==="vibe") LAB.wz.vibeDone=true; wzGo(WZ_ORDER[Math.min(i+1, WZ_ORDER.length-1)]); }
+  function wzPrev(){ const w=LAB.wz; if(w.item){ w.item=null; renderLab(); return; } if(w.path.length){ w.path.pop(); if(w.path.length===1 && w.autoPathRoot && w.path[0]===w.autoPathRoot) w.path=[]; renderLab(); return; } const i=WZ_ORDER.indexOf(w.step); if(i>0) wzGo(WZ_ORDER[i-1]); }
+  function bub(attr, label, sub, cls, i, extra){ return `<button class="wz-b${cls||""}" ${attr} style="animation-delay:${(i*0.04).toFixed(2)}s">${extra||""}<span class="wz-bl">${esc(label)}</span>${sub?`<span class="wz-bs">${esc(sub)}</span>`:""}</button>`; }
+  function wzBody(R){
+    const w=LAB.wz, id=w.step;
+    if(id==="vibe"){
+      let h=`<div class="wz-bubs">${VIBES.map(([k,l,ic],i)=>{ const on = k==="leve"||k==="forte" ? LAB.vibe[k] : LAB.target.includes(k); return bub(`data-vibe="${k}"`, l, "", on?" sel":"", i, `<span class="wz-ic" aria-hidden="true">${ic}</span>`); }).join("")}</div>`;
+      if(LAB.target.length) h+=`<div class="wz-idea">${ideaCard(LAB.target)}</div>`;
+      return h;
+    }
+    const st=wzSt(id);
+    if(id==="fim") return "";
+    if(st.kind==="choice"){
+      const rec=wzRecommend(id,R);
+      return `<div class="wz-opts">${st.options.map((o,i)=>`<button class="wz-o${LAB[id]===o.v?" sel":""}" data-wzc="${o.v}" style="animation-delay:${(i*0.04).toFixed(2)}s"><b>${esc(o.l)}${rec&&rec[0]===o.v?` <em>recomendado</em>`:""}</b><span>${esc(o.d)}</span></button>`).join("")}</div>`;
+    }
+    const groups=wzLevels(st);
+    const fmtQ=q=>String(q).replace(".",",")+(st.unit==="dash"?(q>1?" dashes":" dash"):" ml");
+    if(!groups.length && !(st.egg && eggAvail())) return `<p class="wz-empty">Nada desta etapa no estoque agora. Pode seguir em frente.</p>`;
+    // escolhidos nesta etapa
+    const chosen=labItems().filter(x=>x.step===id);
+    let h = chosen.length||(st.egg&&LAB.egg) ? `<div class="wz-chosen">${chosen.map(x=>`<button class="wz-chip" data-wzi="${esc(x.it.id)}">${esc(x.it.nome)} · ${esc(fmtQ(x.q))}<span aria-hidden="true">✎</span></button>`).join("")}${st.egg&&LAB.egg?`<button class="wz-chip" data-wzegg="1">Clara de ovo<span aria-hidden="true">×</span></button>`:""}</div>` : "";
+    // dose do item em edição
+    if(w.item){
+      const it=S.items.find(i=>i.id===w.item), sel=LAB.sel[w.item];
+      const p=props(it);
+      h+=`<div class="wz-dose"><div class="wz-dh"><b>${esc(it.nome)}</b><span>${esc(traitsOf(it).join(", "))}${p.abv?` · ${p.abv}% de álcool`:" · sem álcool"}</span></div>
+        <p class="wz-dq">Quanto vai no drink?</p>
+        <div class="wz-bubs">${st.doses.map((d,i)=>bub(`data-wzd="${d}"`, String(d).replace(".",","), st.unit==="dash"?(d>1?"dashes":"dash"):"ml", (sel&&sel.q===d?" sel":(!sel&&d===st.dflt?" hint":"")), i)).join("")}${sel?bub(`data-wzrm="1"`,"Remover","", " rm", st.doses.length):""}</div></div>`;
+      return h;
+    }
+    const eggOpt = !!(st.egg && eggAvail());
+    const groupBubs=(lv,withEgg)=>{ const best=new Set(LAB.target.length ? lv.map(g=>[g.k,groupFit(g.items)]).filter(x=>x[1]>0.6).sort((a,b)=>b[1]-a[1]).slice(0,2).map(x=>x[0]) : []); return `<div class="wz-bubs">${lv.map((g,i)=>{ const n=g.items.filter(it=>LAB.sel[it.id]).length; const fit=best.has(g.k); return bub(`data-wzg="${esc(g.k)}"`, g.k, n?`${n} escolhid${n>1?"as":"a"}`:`${g.items.length} ${g.items.length>1?"opções":"opção"}`, (n?" sel":"")+(fit?" fit":""), i); }).join("")}${withEgg?bub(`data-wzegg="1"`,"Clara de ovo",LAB.egg?"incluída":"para espuma",LAB.egg?" sel":"",lv.length):""}</div>`; };
+    const path = w.path.length ? w.path : (groups.length===1 && !eggOpt ? [groups[0].k] : []);
+    w.autoPath = (!w.path.length && path.length) ? path : null;
+    if(!path.length) return h+groupBubs(groups, eggOpt);
+    const g=groups.find(x=>x.k===path[0]); if(!g){ w.path=[]; return h+groupBubs(groups, eggOpt); }
+    if(g.subs){
+      if(path.length===1) return h+groupBubs(g.subs,false);
+      const sb=g.subs.find(x=>x.k===path[1]); return h+bottlesHtml(sb?sb.items:g.items);
+    }
+    return h+bottlesHtml(g.items);
+    function bottlesHtml(items){
+      const top=new Set(LAB.target.length ? items.map(it=>[it,fitScore(it)]).filter(x=>x[1]>0.6).sort((a,b)=>b[1]-a[1]).slice(0,2).map(x=>x[0].id) : []);
+      return `<div class="wz-list">${items.map((it,i)=>{ const sel=LAB.sel[it.id]; return `<button class="wz-row${sel?" sel":""}" data-wzi="${esc(it.id)}" style="animation-delay:${(i*0.035).toFixed(2)}s"><span class="wz-ri">${bottleFor(it,"wz")}</span><span class="wz-rt"><b>${esc(it.nome)}${top.has(it.id)?` <em>combina</em>`:""}</b><small>${esc(traitsOf(it).slice(0,3).join(", "))}</small></span><span class="wz-rq">${sel?esc(fmtQ(sel.q)):"+"}</span></button>`; }).join("")}</div>`;
+    }
+  }
+  function wzCrumb(){
+    const w=LAB.wz; if(!w.path.length && !w.item) return "";
+    const parts=[wzLabel(w.step)].concat(w.path); if(w.item){ const it=S.items.find(i=>i.id===w.item); if(it) parts.push(it.nome); }
+    return `<div class="wz-crumb">${parts.map((p,i)=>i<parts.length-1?`<button data-wzcrumb="${i}">${esc(p)}</button>`:`<b>${esc(p)}</b>`).join("<span>›</span>")}</div>`;
+  }
+  function wzNav(){
+    const w=LAB.wz, id=w.step, st=wzSt(id), i=WZ_ORDER.indexOf(id);
+    if(w.item) return `<div class="wz-nav"><button class="ghost" data-wzback="1">Voltar</button><button class="primary" data-wzdone="1">Pronto</button></div>`;
+    if(id==="vibe") return `<div class="wz-nav"><button class="ghost" data-wzfree="1">Seguir livre</button><button class="primary" data-wznext="1"${LAB.target.length||LAB.vibe.leve||LAB.vibe.forte?"":" disabled"}>Continuar</button></div>`;
+    const chosen = st && (st.kind==="choice" ? !!LAB[id] : (labItems().some(x=>x.step===id) || (st.egg&&LAB.egg)));
+    const optional = st && st.kind==="items" && id!=="base";
+    return `<div class="wz-nav"><button class="ghost" data-wzback="1">Voltar</button>${chosen?`<button class="primary" data-wznext="1">Continuar</button>`:optional?`<button class="ghost strong" data-wznext="1">Pular esta etapa</button>`:`<button class="primary" data-wznext="1" disabled>Continuar</button>`}</div>`;
+  }
+  function wzProgress(){
+    return `<div class="wz-prog">${WZ_ORDER.slice(0,-1).map((id,i)=>{ const cur=LAB.wz.step===id, v=wzValue(id), done=!!v; return `<button class="wz-p${cur?" cur":""}${done?" done":""}" data-wzjump="${id}" title="${esc(wzLabel(id))}${v?": "+esc(v):""}"><i></i><span>${esc(wzLabel(id))}</span></button>`; }).join("")}</div>`;
+  }
+
+  function labResultHtml(R, match, title){
+    const bars = DIMS.map(([k,l])=>{ const t=LAB.target.includes(k); return `<div class="lab-bar${t?" want":""}"><span>${l}${t?" <em>desejado</em>":""}</span><i><b style="width:${(R.scores[k]/5*100).toFixed(0)}%"></b></i></div>`; }).join("");
     const tips=labTips(R,match), how=labHowTo(R);
-    const crea = (S.criacoes||[]).slice().sort((a,b)=>(b.criadoEm||0)-(a.criadoEm||0));
-    box.innerHTML = `
-      <div class="lab-stage">
-        ${targetBar()}
-        <div class="lab-wheel${LAB.fl?" flow":""}">
-          <svg class="lab-ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" /><circle cx="50" cy="50" r="33" class="thin"/>${spokes}</svg>
-          <div class="lab-center">${glassSvg(R)}<div class="lab-meth">${esc((LAB_STEPS[6].options.find(o=>o.v===LAB.method)||{}).l||"")}</div></div>
-          ${bubbles}
-          ${flowLayer()}
-        </div>
-        <div class="lab-hint">${LAB.fl?flowHint():next>=0?`Próxima etapa: <b>${esc(LAB_STEPS[next].label)}</b>. Toque no balão para ver as opções do estoque.`:"Drink completo. Confira o resultado abaixo."}</div>
-        ${LAB.fl?"":adviceBalloons(R)}
-        ${!LAB.fl && LAB.target.length ? ideaCard(LAB.target) : ""}
-      </div>
-      <section class="lab-result">
+    return `<section class="lab-result">
         <h2 class="lab-title">${esc(title)}</h2>
         ${match&&match.kind!=="exato"?(()=>{ const P=planTransform(match.r); return P.missing.length
             ? `<p class="lab-sub">Está a um ingrediente do ${esc(match.n)} clássico, mas falta ${esc(P.missing.join(" e ").toLowerCase())} no estoque.</p>`
@@ -3691,9 +3971,45 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
           ${R.vol && !S.guest?`<button class="ghost" data-log="${esc(match&&match.kind==="exato"?match.n:(LAB.ideaName||"Criação da casa"))}" data-log-origem="lab">Registrar no histórico</button>`:""}
           <button class="ghost" id="labReset">Começar de novo</button>
         </div>
-      </section>
+      </section>`;
+  }
+  function renderLab(){
+    const box=$("labView"); if(!box) return;
+    if(!hasData()){ box.innerHTML=""; return; }
+    const R=labCompute(), match=labMatch(), w=LAB.wz, id=w.step, [q,sub]=WZ_Q[id]||["",""];
+    const title = match ? (match.kind==="exato" ? `Isso é um ${match.n}` : `Lembra um ${match.n}`) : (R.vol ? (LAB.ideaName || "Sua criação") : "Monte seu drink");
+    const prof = DIMS.filter(([k])=>R.scores[k]>=0.9).sort((a,b)=>R.scores[b[0]]-R.scores[a[0]]).slice(0,3);
+    const head=`<div class="wz-head"><div class="wz-glass">${glassSvg(R)}</div><div class="wz-hinfo"><b>${esc(title)}</b><span>${R.vol?`${Math.round(R.final)} ml · ${R.abv.toFixed(0)}% de álcool${R.abv>28?" · forte":R.abv<12?" · leve":""}`:"O copo vai enchendo a cada escolha."}</span>${prof.length?`<div class="wz-mini">${prof.map(([k,l])=>`<i class="${LAB.target.includes(k)?"on":""}">${l}</i>`).join("")}</div>`:""}</div></div>`;
+    const ins = id==="fim" ? [] : wzInsights(id,R);
+    const insHtml = ins.length ? `<div class="wz-ins">${ins.map((t,i)=>`<div class="wz-tip" style="animation-delay:${(0.15+i*0.12).toFixed(2)}s"><span aria-hidden="true">✦</span><p>${t}</p></div>`).join("")}</div>` : "";
+    const stepN = WZ_ORDER.indexOf(id);
+    const card = id==="fim"
+      ? `<div class="wz-card"><div class="wz-stepn">Pronto</div><h2 class="wz-q">${esc(title)}</h2><p class="wz-sub">O resultado e o preparo estão logo abaixo. Para ajustar, toque em qualquer etapa na barra acima.</p><div class="wz-nav"><button class="ghost" data-wzback="1">Voltar</button><button class="primary" id="labReset">Criar outro</button></div></div>`
+      : `<div class="wz-card"><div class="wz-stepn">${id==="vibe"?"Para começar":`Etapa ${stepN} de ${WZ_ORDER.length-2}`}</div><h2 class="wz-q">${esc(q)}</h2><p class="wz-sub">${esc(sub)}</p>${wzCrumb()}${wzBody(R)}${insHtml}${wzNav()}${match&&match.kind==="exato"&&id!=="vibe"?`<div class="wz-match">Isso já é um <b>${esc(match.n)}</b>. <button class="linkbtn" data-wzjump="fim">Ver resultado</button></div>`:""}</div>`;
+    const crea = (S.criacoes||[]).slice().sort((a,b)=>(b.criadoEm||0)-(a.criadoEm||0));
+    box.innerHTML = `<div class="wz">${wzProgress()}${head}${card}</div>
+      ${id==="fim"||(R.vol&&w.peek)?labResultHtml(R,match,title):R.vol?`<button class="ghost wz-peek" data-wzpeek="1">Ver como está ficando</button>`:""}
       ${crea.length && !S.guest?`<h2 class="cat">Criações da casa<span>${crea.length}</span></h2>${crea.map(c=>`<div class="crea"><div><b>${esc(c.nome)}</b><div class="meta">${esc((c.itens||[]).map(x=>x.nome).join(", "))}</div></div><button class="ghost" data-load="${esc(c.id)}">Abrir</button>${S.canWrite?`<button class="linkbtn" data-delcrea="${esc(c.id)}">Excluir</button>`:""}</div>`).join("")}`:""}`;
   }
+  function wzClick(e){
+    const q=sel=>e.target.closest(sel); let el; const w=LAB.wz;
+    if((el=q("[data-vibe]"))){ const k=el.dataset.vibe; if(k==="leve"||k==="forte"){ LAB.vibe[k]=!LAB.vibe[k]; if(LAB.vibe[k]) LAB.vibe[k==="leve"?"forte":"leve"]=false; } else LAB.target = LAB.target.includes(k) ? LAB.target.filter(x=>x!==k) : (LAB.target.length>=3 ? LAB.target.slice(1).concat(k) : LAB.target.concat(k)); renderLab(); return true; }
+    if(q("[data-wzfree]")){ LAB.target=[]; LAB.vibe={leve:false,forte:false}; wzNext(); return true; }
+    if(q("[data-wznext]")){ wzNext(); return true; }
+    if(q("[data-wzback]")){ wzPrev(); return true; }
+    if((el=q("[data-wzjump]"))){ wzGo(el.dataset.wzjump); return true; }
+    if((el=q("[data-wzcrumb]"))){ const k=+el.dataset.wzcrumb; w.item=null; w.path=w.path.slice(0,k); renderLab(); return true; }
+    if((el=q("[data-wzg]"))){ if(!w.path.length && w.autoPath){ w.path=w.autoPath.slice(); w.autoPathRoot=w.autoPath[0]; } else if(!w.path.length) w.autoPathRoot=null; w.path.push(el.dataset.wzg); renderLab(); return true; }
+    if(q("[data-wzegg]")){ LAB.egg=!LAB.egg; renderLab(); return true; }
+    if((el=q("[data-wzi]"))){ w.item=el.dataset.wzi; renderLab(); return true; }
+    if((el=q("[data-wzd]"))){ const st=wzSt(w.step); LAB.ideaName=null; LAB.sel[w.item]={step:st.id, q:parseFloat(el.dataset.wzd)}; w.item=null; renderLab(); return true; }
+    if(q("[data-wzrm]")){ LAB.ideaName=null; delete LAB.sel[w.item]; w.item=null; renderLab(); return true; }
+    if(q("[data-wzdone]")){ w.item=null; renderLab(); return true; }
+    if((el=q("[data-wzc]"))){ LAB[w.step]=el.dataset.wzc; renderLab(); clearTimeout(wzClick._t); wzClick._t=setTimeout(wzNext, 380); return true; }
+    if(q("[data-wzpeek]")){ w.peek=true; renderLab(); return true; }
+    return false;
+  }
+
   function openLabSheet(stepId){
     const st=LAB_STEPS.find(s=>s.id===stepId); if(!st) return;
     LAB.open=stepId;
@@ -3731,11 +4047,9 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
   $("labSheet").addEventListener("change", e=>{ if(e.target.id==="labEgg"){ LAB.egg=e.target.checked; renderLab(); } });
   $("labView").addEventListener("click", async e=>{
     const ib=e.target.closest("[data-idea]"); if(ib){ if(ib.dataset.idea==="next"){ LAB.ideaSeed=(LAB.ideaSeed||0)+1; renderLab(); } else applyIdea(); return; }
-    const tg=e.target.closest("[data-target]"); if(tg){ const k=tg.dataset.target; LAB.target = LAB.target.includes(k) ? LAB.target.filter(x=>x!==k) : (LAB.target.length>=3 ? LAB.target.slice(1).concat(k) : LAB.target.concat(k)); renderLab(); return; }
-    if(flowClick(e)) return;
+    if(wzClick(e)) return;
     const tf=e.target.closest("[data-transform]"); if(tf){ transformTo(tf.dataset.transform); return; }
-    const b=e.target.closest("[data-step]"); if(b){ openFlow(b.dataset.step); return; }
-    if(e.target.id==="labReset"){ Object.assign(LAB,{sel:{},done:{},ice:"",method:"",glass:"",garnish:"",egg:false,fl:null,ideaName:null}); renderLab(); return; }
+    if(e.target.id==="labReset"){ Object.assign(LAB,{sel:{},done:{},ice:"",method:"",glass:"",garnish:"",egg:false,fl:null,ideaName:null,target:[],vibe:{leve:false,forte:false},wz:{step:"vibe",path:[],item:null}}); renderLab(); const s=document.querySelector("#labView .wz"); if(s) s.scrollIntoView({behavior:"smooth",block:"start"}); return; }
     if(e.target.id==="labSave"){
       const nome=($("labName").value||"").trim(); if(!nome){ $("labName").focus(); toast("Dê um nome ao drink."); return; }
       const itens=labItems().map(x=>({id:x.it.id, nome:x.it.nome, step:x.step, q:x.q}));
@@ -3747,7 +4061,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
       const c=(S.criacoes||[]).find(x=>x.id===ld.dataset.load); if(!c) return;
       const sel={}; let lost=0;
       (c.itens||[]).forEach(x=>{ let it=S.items.find(i=>i.id===x.id && available(i)) || S.items.find(i=>i.nome===x.nome && available(i)); if(it) sel[it.id]={step:x.step,q:x.q}; else lost++; });
-      Object.assign(LAB,{sel, done:{base:1,mod:1,acid:1,bitter:1,top:1}, ice:c.ice||"", method:c.method||"", glass:c.glass||"", garnish:c.garnish||"", egg:!!c.egg});
+      Object.assign(LAB,{sel, done:{base:1,mod:1,acid:1,bitter:1,top:1}, ice:c.ice||"", method:c.method||"", glass:c.glass||"", garnish:c.garnish||"", egg:!!c.egg, ideaName:c.nome, wz:{step:"fim",path:[],item:null,vibeDone:true}});
       renderLab(); window.scrollTo({top:$("labView").offsetTop-60,behavior:"smooth"});
       if(lost) toast(`${lost} ingrediente${lost>1?"s":""} desta criação não está${lost>1?"o":""} no estoque.`);
       return;
@@ -3876,10 +4190,16 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     return `<section class="g-mine"><h2 class="cat">Seus drinks<span>${rows.length}</span></h2><p class="meta" style="white-space:normal;margin:-2px 0 8px">O que você já provou aqui e as notas que deu. Toque nas estrelas para avaliar.</p>
       ${rows.map(x=>`<div class="g-order"><div><b>${esc(x.n)}</b><span class="meta">${x.count>1?`${x.count} vezes · `:""}última em ${fmtDate(x.last.criadoEm)}</span></div>${rateBtn(x)}${open&&avail.has(x.n)?`<button class="ghost g-again" data-ask="${esc(x.n)}">Pedir de novo</button>`:""}</div>`).join("")}
       ${sug.length?`<h3 class="g-sug-h">Para provar a seguir</h3><p class="meta" style="white-space:normal;margin:0 0 6px">Escolhidos a partir dos drinks que você mais gostou.</p><div class="g-sug">${sug.map(r=>`<button class="chip" data-open="${esc(r.n)}">${esc(r.n)}</button>`).join("")}</div>`:""}
-      ${S.siteUser && S.siteUser.isAnonymous?`<div class="g-keep"><p class="meta" style="white-space:normal">Seu histórico fica salvo neste celular. Para guardar em qualquer aparelho:</p><button class="ghost" id="gLinkGoogle">Guardar meu histórico com o Google</button></div>`:""}
+      ${S.siteUser && S.siteUser.isAnonymous?`<div class="g-keep"><p class="meta" style="white-space:normal">Seu histórico fica salvo neste celular. Para guardar em qualquer aparelho, entre com uma conta.</p><button class="ghost" id="gLoginOpen">Entrar com Google${window.SITE&&window.SITE.facebook?" ou Facebook":""}</button></div>`:""}
     </section>`;
   }
-  function guestFootHtml(){ return IS_SITE ? `<p class="meta g-foot"><button class="linkbtn" id="gOwnerLogin">Sou da casa: entrar</button></p>` : ""; }
+  function guestFootHtml(){
+    const legal=`<p class="g-legal">Proibido para menores de 18 anos. Beba com moderação. Se beber, não dirija.${IS_SITE?` · <a href="privacidade.html">Privacidade</a>`:""}</p>`;
+    if(!IS_SITE) return legal;
+    const u=S.siteUser, prov=u&&u.providerData&&u.providerData[0]&&u.providerData[0].providerId;
+    const who = u && !u.isAnonymous ? `Você entrou como <b>${esc(u.displayName||u.email||"")}</b> (${prov==="facebook.com"?"Facebook":"Google"}) · <button class="linkbtn" id="gLogout">Sair</button>` : `${guestName()?`Visitante: <b>${esc(guestName())}</b> · `:""}<button class="linkbtn" id="gLoginOpen">Entrar com uma conta</button>`;
+    return `<div class="g-me">${who}</div>${legal}`;
+  }
   function guestHtml(kiosk){
     if(!IS_SITE && S.guest && !kiosk && S.noite && S.noite.whatsapp) S.waGuest={ativo:!!S.noite.ativa, titulo:S.noite.titulo, whatsapp:S.noite.whatsapp};
     if(!S.noite || !S.noite.ativa) return `<div class="g-wrap"><div class="g-head">${lockupHTML({ink:"var(--text)",accent:"var(--accent)",ground:"var(--bg)"},1)}<p class="g-title">Carta de coquetéis</p></div><p class="g-intro">${S.waGuest?"Os pedidos desta noite foram encerrados. Obrigado pela visita!":"Os pedidos abrem durante as noites do bar. Enquanto isso, conheça a carta."}</p>${guestMenuHtml(false, true)}${kiosk?"":guestMineHtml()}${kiosk?"":guestFootHtml()}</div>`;
@@ -4290,6 +4610,25 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
   }
   $("exportBtn").onclick=exportCopy;
 
+  /* ---------- confirmação de maioridade ---------- */
+  function ageOk(){ try{ if(sessionStorage.getItem("lcb-age")==="1") return true; const v=+localStorage.getItem("lcb-age-ok"); return v && (Date.now()-v) < 30*86400000; }catch(_){ return false; } }
+  function openGate(){ $("gateLogo").innerHTML=lockupHTML({ink:"#3a2a20",accent:"#96604a",ground:"#f6efe5"},1); $("ageGate").hidden=false; setTimeout(()=>$("gDia").focus(),80); }
+  [["gDia",2,"gMes"],["gMes",2,"gAno"]].forEach(([a,n,b])=>$(a).addEventListener("input",()=>{ $(a).value=$(a).value.replace(/\D/g,""); if($(a).value.length>=n) $(b).focus(); }));
+  $("gAno").addEventListener("input",()=>{ $("gAno").value=$("gAno").value.replace(/\D/g,""); });
+  $("gAno").addEventListener("keydown",e=>{ if(e.key==="Enter") $("gateOk").click(); });
+  $("gateOk").onclick=()=>{
+    const d=+$("gDia").value, m=+$("gMes").value, y=+$("gAno").value, err=$("gateErr");
+    const dt=new Date(y, m-1, d);
+    if(!d||!m||y<1900||dt.getFullYear()!==y||dt.getMonth()!==m-1||dt.getDate()!==d||dt>new Date()){ err.textContent="Confira a data de nascimento."; return; }
+    const now=new Date(); let age=now.getFullYear()-y; if(now.getMonth()<m-1 || (now.getMonth()===m-1 && now.getDate()<d)) age--;
+    if(age<18){ err.textContent="Desculpe, o acesso é permitido apenas para maiores de 18 anos."; $("gateOk").disabled=true; try{ sessionStorage.setItem("lcb-age-no","1"); }catch(_){} return; }
+    try{ sessionStorage.setItem("lcb-age","1"); if($("gRemember").checked) localStorage.setItem("lcb-age-ok", String(Date.now())); }catch(_){}
+    $("ageGate").hidden=true;
+    if(S.welcomeAfterGate && S.showWelcome){ S.welcomeAfterGate=false; S.showWelcome(); }
+  };
+  try{ if(sessionStorage.getItem("lcb-age-no")==="1"){ $("gateOk").disabled=true; $("gateErr").textContent="Desculpe, o acesso é permitido apenas para maiores de 18 anos."; } }catch(_){}
+  if(!ageOk()) openGate();
+
   /* ---------- conexão com o banco ---------- */
   renderBrand();
   window.addEventListener("resize", ()=>{ clearTimeout(renderBrand._t); renderBrand._t=setTimeout(renderBrand,200); });
@@ -4334,7 +4673,27 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     try{ firebase.initializeApp(C.config); }catch(_){}
     const auth=firebase.auth(); db=firebase.firestore();
     downloads={ save: async ({filename,data})=>{ const blob = data instanceof Blob ? data : new Blob([data],{type:/\.html$/.test(filename)?"text/html":"application/octet-stream"}); const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=filename; document.body.appendChild(a); a.click(); setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); },1500); } };
-    const provider=()=>{ const p=new firebase.auth.GoogleAuthProvider(); p.setCustomParameters({prompt:"select_account"}); return p; };
+    const provider=(kind)=>{ if(kind==="facebook"){ const p=new firebase.auth.FacebookAuthProvider(); p.addScope("email"); return p; } const p=new firebase.auth.GoogleAuthProvider(); p.setCustomParameters({prompt:"select_account"}); return p; };
+    if(C.facebook) $("welFacebook").hidden=false;
+    const welDone=()=>{ try{ return localStorage.getItem("lcb-welcome")==="1"; }catch(_){ return false; } };
+    const setWelDone=()=>{ try{ localStorage.setItem("lcb-welcome","1"); }catch(_){} };
+    const showWelcome=()=>{ $("welLogo").innerHTML=lockupHTML({ink:"#3a2a20",accent:"#96604a",ground:"#f6efe5"},1); $("welName").value=guestName(); $("welcome").hidden=false; };
+    S.showWelcome=showWelcome;
+    async function signIn(kind){
+      const cur=auth.currentUser;
+      try{
+        if(cur && cur.isAnonymous){ await cur.linkWithPopup(provider(kind)); }
+        else await auth.signInWithPopup(provider(kind));
+        setWelDone(); location.reload();
+      }catch(err){
+        const c=err&&err.code;
+        if((c==="auth/credential-already-in-use"||c==="auth/email-already-in-use") && err.credential){ try{ await auth.signInWithCredential(err.credential); setWelDone(); location.reload(); }catch(_){ toast("Não foi possível entrar."); } return; }
+        if(c==="auth/account-exists-with-different-credential") { toast("Esse e-mail já entrou com outra conta. Use o Google."); return; }
+        if(c==="auth/popup-closed-by-user"||c==="auth/cancelled-popup-request") return;
+        if(c==="auth/popup-blocked"){ toast("O navegador bloqueou a janela de login. Libere pop-ups para este site."); return; }
+        toast("Não foi possível entrar: "+(c||"erro"));
+      }
+    }
     let started=false;
     auth.onAuthStateChanged(async u=>{
       if(!u){ try{ await auth.signInAnonymously(); }catch(e){ S.mode="offline"; render(); enterGuest(); toast("Não foi possível conectar. Verifique a internet."); } return; }
@@ -4345,13 +4704,21 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
       S.me={id: owner ? (O.legacyId||u.uid) : u.uid, name: owner ? O.name : guestName(), isOwner:owner, canEdit:owner, email};
       const userShim={ me: async ()=>({id:S.me.id, name:S.me.name, isOwner:owner, canEdit:owner}), can: async ()=>owner };
       if(owner){ enterHost(); $("siteActs").hidden=false; $("siteWho").textContent=O.name; } else enterGuest();
+      if(!owner && u.isAnonymous && !welDone()){ if(ageOk()) showWelcome(); else S.welcomeAfterGate=true; }
+      if(!u.isAnonymous && !guestName() && u.displayName) setGuestName(u.displayName.split(" ")[0]);
       S.canWrite=owner;
       try{ connectSocial(userShim); }catch(_){}
       subscribeItems();
       if(owner) db.doc("livro/dados").get().then(d=>{ if(d.exists){ try{ applyBook(JSON.parse(d.data().json)); }catch(_){} } }).catch(()=>{});
     });
     document.addEventListener("click", async e=>{
-      if(e.target.id==="gOwnerLogin"){ try{ await auth.signInWithPopup(provider()); }catch(err){ if(err&&err.code!=="auth/popup-closed-by-user") toast("Não foi possível entrar: "+(err.code||"erro")); } }
+      const t=e.target.closest("button"); const id=t&&t.id;
+      if(id==="welGoogle") return signIn("google");
+      if(id==="welFacebook") return signIn("facebook");
+      if(id==="gLoginOpen"){ showWelcome(); return; }
+      if(id==="welGuest"){ const n=($("welName").value||"").trim(); if(!n){ $("welName").focus(); toast("Diga seu nome para a gente chamar você."); return; } setGuestName(n); setWelDone(); $("welcome").hidden=true; renderGuest(); return; }
+      if(id==="gLogout"){ if(!(await uiConfirm("Sair da sua conta neste aparelho?","Sair"))) return; try{ localStorage.removeItem("lcb-welcome"); }catch(_){} await auth.signOut(); location.reload(); return; }
+      if(id==="gOwnerLogin"){ return signIn("google"); }
       if(e.target.id==="gLinkGoogle"){
         try{ await auth.currentUser.linkWithPopup(provider()); toast("Pronto! Seu histórico está guardado na sua conta Google."); renderGuest(); }
         catch(err){ if(err && err.code==="auth/credential-already-in-use" && err.credential){ try{ await auth.signInWithCredential(err.credential); }catch(_){ toast("Não foi possível entrar."); } } else if(!(err&&err.code==="auth/popup-closed-by-user")) toast("Não foi possível entrar: "+(err&&err.code||"erro")); }
