@@ -578,6 +578,110 @@ body.kiosk-on .main-wrap, body.kiosk-on #addBtn{display:none !important}
 .wa-btn{display:inline-flex;align-items:center;text-decoration:none}
 .wa-btn.off{opacity:.55}
 .g-foot{text-align:center;margin-top:28px}
+
+.g-nav button{padding:10px 14px;font-size:14.5px}
+@media (max-width:430px){.g-nav{max-width:calc(100vw - 16px)}.g-nav button{padding:10px 9px;font-size:13.5px}}
+.g-nav button.dot{position:relative}.g-nav button.dot::after{content:"";position:absolute;top:8px;right:6px;width:8px;height:8px;border-radius:50%;background:#e2563f}
+.o-alq{display:flex;gap:10px;align-items:flex-start;background:var(--surface2);border-radius:10px;padding:10px 12px;margin:0 0 12px;font-size:13.5px;line-height:1.4;color:var(--muted);cursor:pointer}
+.o-alq[hidden]{display:none}.o-alq b{color:var(--text)}.o-alq input{width:20px;height:20px;margin-top:2px;accent-color:var(--accentFill);flex:none}
+.alq-intro{font-size:14.5px;line-height:1.5;color:var(--muted);text-align:center;max-width:46ch;margin:0 auto 14px}
+.alq-status{width:fit-content;margin:0 auto 14px;font-size:13px;font-weight:600;padding:5px 14px;border-radius:999px;background:var(--surface2);color:var(--muted)}
+.alq-status.on{background:var(--accentFill);color:var(--onAccent)}
+.alq-champ{position:relative;text-align:center;border-radius:16px;padding:20px 16px 18px;margin:0 0 16px;background:linear-gradient(160deg,#3a2b20,#5a4230);color:#f6efe5;border:1px solid #d1ad53;box-shadow:0 10px 28px rgba(0,0,0,.18)}
+.alq-champ h2{font-family:var(--serif);font-weight:400;font-size:27px;margin:4px 0 2px;color:#fff}
+.alq-champ p{margin:0;font-size:14px;color:#e7d8c6}
+.alq-kicker{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:#d1ad53;font-weight:700}
+.alq-crown{color:#d1ad53;font-size:22px;line-height:1}
+.alq-name{display:grid;gap:8px;margin-top:14px;text-align:left}
+.alq-name label{font-size:14px;font-weight:600}
+.alq-name input{font:inherit;font-size:16px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff}
+.alq-ok{margin-top:10px!important;color:#d1ad53!important;font-weight:600}
+.alq-card{display:flex;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;margin:0 0 10px}
+.alq-card.win{border-color:#d1ad53;box-shadow:0 0 0 1px #d1ad53 inset}
+.alq-card.voted{border-color:var(--accent)}
+.alq-rank{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;background:var(--surface2);color:var(--muted)}
+.alq-card.win .alq-rank{background:#d1ad53;color:#27314a}
+.alq-body{flex:1;min-width:0}
+.alq-body h3{font-family:var(--serif);font-weight:400;font-size:20px;margin:0}
+.alq-by{margin:2px 0 8px;font-size:13px;color:var(--muted)}
+.alq-ing{margin:0;font-size:13.5px;line-height:1.45}
+.alq-how{margin:3px 0 0;font-size:12.5px;color:var(--muted)}
+.alq-meta{display:flex;flex-wrap:wrap;gap:4px 12px;margin:8px 0 0;font-size:12.5px;color:var(--muted)}
+.alq-acts{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px}
+.alq-acts .ghost.on{border-color:var(--accent);color:var(--accent);font-weight:700}
+.n-alq{margin-top:18px}
+.alq-host{display:grid;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0}
+.alq-host.win{border-color:#d1ad53}
+.alq-host .meta{display:block;white-space:normal}
+.g-histlink{display:block;margin:22px auto 0;background:none;border:0;color:var(--accent);font:inherit;font-weight:600;font-size:15px;cursor:pointer}
+.gh-seg{display:flex;gap:4px;background:var(--surface2);padding:4px;border-radius:999px;width:fit-content;margin:4px auto 16px}
+.gh-seg button{border:0;background:none;font:inherit;font-weight:600;font-size:14px;color:var(--muted);padding:7px 16px;border-radius:999px;cursor:pointer}
+.gh-seg button[aria-pressed="true"]{background:var(--surface);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.gh-night{margin:0 0 18px}
+.gh-nh{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 6px}
+.gh-nh h2{font-family:var(--serif);font-weight:400;font-size:21px;margin:0}
+.gh-nh span{font-size:13px;color:var(--muted)}
+.gh-row .g-again{grid-column:2;justify-self:end;padding:5px 12px;font-size:13px;min-height:0;border-radius:999px}
+.gh-row .meta{display:block}
+.g-root a{color:var(--accent)}
+.gh-row .g-badge{justify-self:end}
+.gh-tag{font-family:var(--sans,inherit);display:inline-block;font-size:11px;font-weight:700;background:var(--accentFill);color:var(--onAccent);border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:2px}
+.n-custom{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;font-size:12.5px;color:var(--muted);margin:4px 0 6px;padding:6px 8px;border-radius:8px;background:var(--surface2)}
+.n-custom span{flex-basis:100%;font-weight:600;color:var(--accent)}
+.intro{position:fixed;inset:0;z-index:300;background:radial-gradient(120% 90% at 50% 40%,#4a382c 0%,#2a1f18 60%,#1d1511 100%);display:flex;align-items:center;justify-content:center;transition:opacity .6s ease;overflow:hidden}
+.intro[hidden]{display:none}
+.intro.out{opacity:0}
+.in-stage{display:flex;flex-direction:column;align-items:center;text-align:center;padding:16px;color:#f6efe5}
+.in-logo .lockup{justify-content:center}
+.intro .badge.in-zoom{transform:translate(var(--dx),var(--dy)) scale(var(--s));transform-origin:50% 50%}
+.intro.go .badge.in-zoom{animation:inZoom 1.1s cubic-bezier(.6,.05,.25,1) 2.35s both}
+@keyframes inZoom{from{transform:translate(var(--dx),var(--dy)) scale(var(--s))}to{transform:none}}
+.intro .in-draw{stroke-dasharray:1 1;stroke-dashoffset:1}
+.intro.go .in-draw{animation:inDraw .9s ease forwards}
+@keyframes inDraw{to{stroke-dashoffset:0}}
+.intro .in-liqfull{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0)}
+.intro.go .in-liqfull{animation:inFill 1.1s cubic-bezier(.3,.7,.3,1) 1.25s forwards,inSettle .9s ease 3.2s forwards}
+@keyframes inFill{to{transform:scaleY(1)}}
+@keyframes inSettle{to{opacity:0}}
+.intro .in-liqfin,.intro .in-men{opacity:0}
+.intro.go .in-liqfin,.intro.go .in-men{animation:inFade .6s ease 2.2s forwards}
+.intro .in-bub{fill:rgba(255,255,255,.8);opacity:0}
+.intro.go .in-bub{animation:inBub 1.1s ease-in 2 both}
+@keyframes inBub{0%{opacity:0;transform:translateY(0)}25%{opacity:1}100%{opacity:0;transform:translateY(-34px)}}
+.intro .in-peel{stroke-dasharray:1 1;stroke-dashoffset:1}
+.intro.go .in-peel{animation:inDraw .6s ease 2.05s forwards}
+.intro .in-star{opacity:0;transform-box:fill-box;transform-origin:50% 50%}
+.intro.go .in-star{animation:inStar .7s cubic-bezier(.3,1.6,.5,1) 2.3s forwards}
+.intro.go .in-star.s2{animation-delay:2.45s}
+@keyframes inStar{0%{opacity:0;transform:scale(.2) rotate(-60deg)}100%{opacity:1;transform:none}}
+.intro .in-base{opacity:0}
+.intro.go .in-base{animation:inFade .6s ease 3.05s forwards}
+.intro .in-H,.intro .in-L{opacity:0}
+.intro.go .in-H{animation:inFlyL .85s cubic-bezier(.2,.8,.25,1) 2.8s forwards}
+.intro.go .in-L{animation:inFlyR .85s cubic-bezier(.2,.8,.25,1) 2.9s forwards}
+@keyframes inFlyL{from{opacity:0;translate:-46vw 0;scale:3.2;filter:blur(8px)}to{opacity:1;translate:0 0;scale:1;filter:blur(0)}}
+@keyframes inFlyR{from{opacity:0;translate:46vw 0;scale:3.2;filter:blur(8px)}to{opacity:1;translate:0 0;scale:1;filter:blur(0)}}
+.intro .in-sep{transform:scaleY(0)}
+.intro.go .in-sep{animation:inSep .5s ease 3.05s forwards}
+@keyframes inSep{to{transform:scaleY(1)}}
+.in-ch{font-style:inherit;display:inline-block}
+.intro .in-ch{opacity:0}
+.intro.go .in-ch{animation:inCh .6s cubic-bezier(.2,.8,.25,1) forwards}
+@keyframes inCh{from{opacity:0;transform:scale(2.6) translateY(-6px);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}
+.intro .in-caps,.intro .in-est{opacity:0}
+.intro.go .in-caps{animation:inCaps .8s ease 3.75s forwards}
+.intro.go .in-est{animation:inUp .6s ease 4.05s forwards}
+@keyframes inCaps{from{opacity:0;letter-spacing:1.4em}to{opacity:1}}
+@keyframes inFade{to{opacity:1}}
+.in-hi{font-family:"EB Garamond",Georgia,serif;font-style:italic;font-size:22px;margin:22px 0 0;opacity:0}
+.in-night{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:#d3a283;margin:8px 0 0;opacity:0}
+.in-skip{margin-top:22px;background:none;border:1px solid rgba(246,239,229,.35);color:#f6efe5;border-radius:999px;padding:8px 22px;font:inherit;font-size:14px;opacity:0;cursor:pointer}
+.intro.go .in-hi{animation:inUp .8s ease 4.35s forwards}
+.intro.go .in-night{animation:inUp .8s ease 4.6s forwards}
+.intro.go .in-skip{animation:inUp .6s ease 4.9s forwards}
+@keyframes inUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.intro .badge.in-zoom{transform:none;animation:none!important}.intro .in-draw,.intro .in-peel{stroke-dashoffset:0;animation:none!important}.intro .in-liqfull{display:none}.intro .in-liqfin,.intro .in-men,.intro .in-star,.intro .in-base,.intro .in-H,.intro .in-L,.intro .in-ch,.intro .in-caps,.intro .in-est,.in-hi,.in-night,.in-skip{opacity:1!important;animation:none!important;transform:none}.intro .in-sep{transform:none;animation:none!important}.intro .in-bub{display:none}}
+
 .preview-btn{display:inline-flex;align-items:center;gap:7px;margin-top:8px;background:var(--surface2);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
 .preview-btn[hidden]{display:none}
 .preview-pill{position:fixed;left:12px;right:12px;margin:0 auto;width:fit-content;max-width:520px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:150;display:flex;align-items:center;gap:12px;background:#2a1f18;color:#f6efe5;border-radius:999px;padding:8px 8px 8px 18px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
@@ -802,6 +906,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
   <button class="ghost" id="welGuest">Entrar como visitante</button>
   <p class="gate-note">Como visitante, seu histórico fica salvo só neste aparelho. Dá para entrar com uma conta depois, sem perder nada.</p>
 </div></div>
+<div id="intro" class="intro" hidden aria-hidden="true"></div>
 <div id="guestView" class="wrap g-root" hidden></div>
 <div class="preview-pill" id="previewPill" hidden role="status"><span><b>Visão do convidado</b><small>Pedidos feitos aqui entram na fila de verdade.</small></span><button id="previewExit">Voltar para a casa</button></div>
 <div id="kioskView" class="g-root" hidden></div>
@@ -894,6 +999,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
   <div class="field" id="oDrinkField" hidden><label for="oDrink">Drink</label><select id="oDrink"></select></div>
   <div class="field"><label for="oName">Seu nome</label><input id="oName" maxlength="30" placeholder="Como devemos chamar você?"></div>
   <div class="field" id="oIceField" hidden><label>Gelo</label><div class="seg" id="oIce"><button type="button" data-oice="sem" aria-pressed="true">Sem gelo</button><button type="button" data-oice="com" aria-pressed="false">Com gelo</button></div></div>
+  <label class="o-alq" id="oAlqField" hidden><input type="checkbox" id="oAlq" checked><span><b>Mostrar na Alquimia dos Convidados</b><br>Os outros convidados poderão pedir e votar no seu drink. O mais votado da noite ganha nome e entra na carta.</span></label>
   <div class="field"><label for="oObs">Algum pedido especial? (opcional)</label><input id="oObs" maxlength="80" placeholder="Ex.: menos doce, sem gelo"></div>
   <div class="sheet-foot"><div class="right"><button class="ghost" id="oCancel">Cancelar</button><button class="primary" id="oSend">Enviar pedido</button><a class="primary wa-btn" id="oWa" href="#" target="_blank" rel="noopener" hidden>Enviar no WhatsApp</a></div></div>
 </div></div>
@@ -925,7 +1031,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
 </div></div>
 <div class="sheet-back" id="labSheet" aria-hidden="true"><div class="sheet" role="dialog" aria-modal="true" id="labSheetBody"></div></div>
 <div class="pdf-overlay" id="pdfOverlay" hidden>Preparando o cardápio em PDF…</div>
-<nav class="g-nav" id="guestNav" hidden aria-label="Navegação do convidado"><button id="gTabMenu" aria-selected="true">Cardápio</button><button id="gTabLab" aria-selected="false">Laboratório</button></nav>
+<nav class="g-nav" id="guestNav" hidden aria-label="Navegação do convidado"><button id="gTabMenu" aria-selected="true">Cardápio</button><button id="gTabLab" aria-selected="false">Laboratório</button><button id="gTabAlq" aria-selected="false" hidden>Alquimia</button><button id="gTabHist" aria-selected="false" hidden>Histórico</button></nav>
 <div class="sheet-back" id="techSheet" aria-hidden="true"><div class="sheet" role="dialog" aria-modal="true" id="techBody"></div></div>
 <div class="bench" id="bench" hidden role="dialog" aria-modal="true" aria-labelledby="bnTitle"><div class="bench-in">
   <div class="bench-top"><button id="bnClose">Sair</button><div class="bench-title" id="bnTitle"></div><button id="bnVoice" aria-pressed="false">Voz</button></div>
@@ -1805,7 +1911,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     {"n": "Shirley Temple", "gelo": "cubos", "a": [["glass"], ["ice"], ["pour", 0], ["pour", 1], ["top", 2], ["stir", 1], ["garnish", "cherry"], ["serve"]], "mi": "grenadine, suco de limão fresco, ginger ale", "mt": "Criado em homenagem à atriz mirim dos anos 1930; a versão mais conhecida aponta o Chasen's, em Hollywood, mas o Brown Derby e o Royal Hawaiian também reivindicam. A própria Shirley Temple achava o drink doce demais.", "ill": "highball", "b": "Outros", "p": "Doce, refrescante, sem álcool", "d": "Doce e borbulhante, com ginger ale, grenadine e um toque de limão.", "h": "Lanches, festas infantis, pipoca", "i": [["7,5 ml", "Grenadine", "grenadine"], ["10 ml", "Suco de limão fresco", "limao"], ["165 ml", "Ginger ale", "gingerAle"]], "s": ["Coloque a grenadine e o suco de limão no copo alto.", "Encha de gelo e complete com ginger ale bem gelada.", "Misture delicadamente.", "Finalize com uma fatia de limão e uma cereja maraschino."], "c": "Copo alto (collins) com gelo", "g": "Fatia de limão e cereja maraschino", "src": {"l": "Arsenal do Bartender", "p": 91}},
     {"n": "Virgin Mary", "gelo": "cubos", "a": [["glass"], ["ice"], ["pour", 0], ["pour", 1], ["pour", 2], ["pour", 3], ["pour", 4], ["pour", 5], ["stir", 1], ["serve"]], "mi": "suco de tomate, suco de limão fresco, molho inglês, molho de pimenta, raiz-forte, sal de aipo", "mt": "Versão sem álcool do Bloody Mary, sem data de criação documentada — a ligação com a Lei Seca é improvável, pois o próprio Bloody Mary só se firmou depois. Sem a vodka, a personalidade vem toda do tomate e dos temperos.", "ill": "highball", "b": "Outros", "p": "Salgado, especiado, sem álcool", "d": "Salgada e especiada, com tomate, limão, raiz-forte e pimenta.", "h": "Brunch, ovos, sanduíches", "i": [["150 ml", "Suco de tomate", "sucoTomate"], ["15 ml", "Suco de limão fresco", "limao"], ["4 dashes", "Molho inglês", "molhoIngles"], ["8 gotas", "Molho de pimenta", "molhoPimenta"], ["1/2 colher de bar", "Raiz-forte", "raizForte"], ["2 pitadas", "Sal de aipo", "salAipo"], ["A gosto", "Pimenta-do-reino", "pimentaReino", true]], "s": ["Coloque todos os ingredientes na coqueteleira com gelo.", "Faça o 'rolling': despeje a mistura de um recipiente para o outro (coqueteleira ↔ copo de mistura) 4 a 6 vezes, devagar, para integrar sem aerar demais.", "Coe para o copo alto com gelo novo.", "Finalize com um talo de aipo e, se quiser, um ramo de alecrim."], "c": "Copo alto (collins) com gelo", "g": "Talo de aipo e alecrim (opcional)", "src": {"l": "Arsenal do Bartender", "p": 92}}
   ];
-  const BASES = ["Whisky","Gin","Vodka","Rum","Tequila","Cachaça","Aperitivos","Licores","Conhaque","Outros"];
+  const BASES = ["Whisky","Gin","Vodka","Rum","Tequila","Cachaça","Aperitivos","Licores","Conhaque","Outros","Alquimia"];
   const LVORDER = {fim:0, metade:1, cheio:2, fechada:3};
   function available(it){
     if(it.nivel==="acabou") return false;
@@ -2391,7 +2497,8 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     Aperitivos:{t:"Aperitivos & Spritz", s:"Amargos italianos e bolhas"},
     Licores:{t:"Licores & Amari", s:"Para depois do jantar"},
     Conhaque:{t:"Conhaque", s:"A tradição francesa"},
-    Outros:{t:"Outros clássicos", s:""}
+    Outros:{t:"Outros clássicos", s:""},
+    Alquimia:{t:"Alquimia dos Convidados", s:"Campeões das noites, batizados por quem criou"}
   };
   function menuSections(){
     const avail = RECIPES.filter(r=>!evalRecipe(r).missing.length);
@@ -2402,7 +2509,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
       return {b, meta:MENU_META[b]||{t:b,s:""}, drinks:ds, feat};
     }).filter(Boolean);
   }
-  const SEC_COL = {Whisky:"#e8c9a0", Gin:"#cdd6c1", Rum:"#e6c29e", Tequila:"#e2d6a8", "Cachaça":"#d8ddb9", Aperitivos:"#efc6b4", Licores:"#dcc6cc", Conhaque:"#e3c6aa", Outros:"#e6d6c3"};
+  const SEC_COL = {Whisky:"#e8c9a0", Gin:"#cdd6c1", Rum:"#e6c29e", Tequila:"#e2d6a8", "Cachaça":"#d8ddb9", Aperitivos:"#efc6b4", Licores:"#dcc6cc", Conhaque:"#e3c6aa", Outros:"#e6d6c3", Alquimia:"#e9d3a6"};
   function blobPath(cx,cy,r,seed){ let d=""; const n=7; for(let k=0;k<=n;k++){ const a=k/n*Math.PI*2; const rr=r*(0.86+0.14*Math.sin(a*3+seed)); const x=cx+Math.cos(a)*rr, y=cy+Math.sin(a)*rr*0.92; d+= (k?` S${(cx+Math.cos(a-0.35)*rr*1.04).toFixed(1)} ${(cy+Math.sin(a-0.35)*rr*0.96).toFixed(1)} `:"M")+`${x.toFixed(1)} ${y.toFixed(1)}`; } return d+"Z"; }
   function finalState(r){
     const A=buildAnim(r); const n=A.acts.length; if(!n) return null;
@@ -3993,6 +4100,35 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     return `<div class="wz-prog">${WZ_ORDER.slice(0,-1).map((id,i)=>{ const cur=LAB.wz.step===id, v=wzValue(id), done=!!v; return `<button class="wz-p${cur?" cur":""}${done?" done":""}" data-wzjump="${id}" title="${esc(wzLabel(id))}${v?": "+esc(v):""}"><i></i><span>${esc(wzLabel(id))}</span></button>`; }).join("")}</div>`;
   }
 
+  const GARN_ANIM={cascaLaranja:"peel", cascaLimao:"lemonPeel", rodelaLaranja:"orangeWheel", rodelaLimao:"limeWheel", cereja:"cherry", azeitona:"olive", hortela:"mint"};
+  const GLASS_TXT={rocks:"Copo baixo", coupe:"Taça coupe", martini:"Taça martini", highball:"Copo alto (highball)", wine:"Taça de vinho", flute:"Taça flute"};
+  function keyFor(it){ const pref=["clara","limao","xarope","mel","gengibre","soda","tonica","coca","refriLimao","espumante","campari","aperol","fernet","cynar","averna","cointreau","rosso","dry","angostura","orangeBitters","cerejaBitters"]; for(const k of pref) if(M[k] && itemTest(M[k],it)) return k; for(const k in M){ if(M[k].always) continue; if(itemTest(M[k],it)) return k; } return "_x"; }
+  function labSnapshot(){
+    const L=labItems();
+    const base = `Criação de ${(guestName()||S.me.name||"convidado").split(" ")[0]}`;
+    const n = alqTonight().filter(a=>a.autorUid===S.me.id).length;
+    const nome = LAB.ideaName || (n ? `${base} nº ${n+1}` : base);
+    return {nome, itens:L.map(x=>({id:x.it.id, nome:x.it.nome, q:x.q, unit:x.p.dash?"dash":"ml", step:x.step, key:keyFor(x.it)})), method:LAB.method||"", glass:LAB.glass||"", ice:LAB.ice||"", garnish:LAB.garnish||"", egg:!!LAB.egg};
+  }
+  function customToRecipe(c, nome){
+    const it=(c.itens||[]).map(x=>[x.unit==="dash"?`${x.q} dash${x.q>1?"es":""}`:`${String(x.q).replace(".",",")} ml`, x.nome, x.key||"_x"]);
+    if(c.egg) it.push(["1","Clara de ovo","clara"]);
+    const top=[], pours=[]; (c.itens||[]).forEach((x,i)=>{ (x.step==="top"?top:pours).push(i); }); if(c.egg) pours.push(it.length-1);
+    const gelo={esfera:"esfera",cubo:"cubo",pedras:"cubos",picado:"picado",sem:"sem"}[c.ice]||"sem";
+    const stem=["coupe","martini","flute"].includes(c.glass), G=GARN_ANIM[c.garnish];
+    let a;
+    if(c.method==="montado"){ a=[["glass"]]; if(gelo!=="sem") a.push(["ice"]); pours.forEach(i=>a.push(["pour",i])); top.forEach(i=>a.push(["top",i])); a.push(["stir",1]); }
+    else { a=(gelo==="sem"&&stem)?[["chill"],["mixer"]]:[["mixer"]]; pours.forEach(i=>a.push(["pour",i])); if(c.method==="dry"||c.egg) a.push(["dryshake"]); a.push(["ice"]); a.push(c.method==="mexido"?["stir",30]:["shake",12]); a.push(gelo!=="sem"?["strain","ice"]:["strain"]); top.forEach(i=>a.push(["top",i])); }
+    if(G) a.push(["garnish",G]); a.push(["serve"]);
+    const fmt=x=> x[2]==="clara" ? "1 clara de ovo" : `${x[0]} de ${softLower(x[1])}`;
+    const GN=GLASSNAME[c.glass]||GLASSNAME.rocks, iceTxt={esfera:", sobre uma esfera grande de gelo",cubo:", sobre um cubo grande de gelo",cubos:", com gelo em cubos",picado:", com gelo picado"}[gelo]||"";
+    const s=[];
+    if(c.method==="montado"){ s.push(`Prepare ${GN}${iceTxt}.`); if(pours.length) s.push(`Adicione ${pours.map(i=>fmt(it[i])).join(", ")}.`); if(top.length) s.push(`Complete com ${top.map(i=>fmt(it[i])).join(" e ")}.`); s.push("Mexa uma vez, de baixo para cima."); }
+    else { if(gelo==="sem") s.push(`Gele ${GN} com gelo e água.`); s.push(`${c.method==="mexido"?"No mixing glass":"Na coqueteleira"}, junte ${pours.map(i=>fmt(it[i])).join(", ")}.`); if(c.method==="dry"||c.egg) s.push("Bata sem gelo por 10 segundos para montar a espuma."); s.push(c.method==="mexido"?"Encha de gelo e mexa por 20 a 30 segundos.":"Encha de gelo e bata forte por 12 a 15 segundos."); s.push(`Coe ${GN.replace(/^o /,"no ").replace(/^a /,"na ")}${iceTxt}.`); if(top.length) s.push(`Complete com ${top.map(i=>fmt(it[i])).join(" e ")}.`); }
+    const gl=(LAB_STEPS.find(x=>x.id==="garnish").options.find(o=>o.v===c.garnish)||{}).l;
+    if(gl && c.garnish!=="nenhuma") s.push(`Finalize com ${gl.toLowerCase()}.`);
+    return {n:nome||c.nome, gelo, a, i:it, s, c:(GLASS_TXT[c.glass]||"Copo baixo")+iceTxt.replace(", "," "), g:gl&&c.garnish!=="nenhuma"?gl:"", mi:"", p:"", d:"", h:"", b:"Outros"};
+  }
   function labResultHtml(R, match, title){
     const bars = DIMS.map(([k,l])=>{ const t=LAB.target.includes(k); return `<div class="lab-bar${t?" want":""}"><span>${l}${t?" <em>desejado</em>":""}</span><i><b style="width:${(R.scores[k]/5*100).toFixed(0)}%"></b></i></div>`; }).join("");
     const tips=labTips(R,match), how=labHowTo(R);
@@ -4013,6 +4149,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
         ${how.length?`<h3>Como preparar</h3><ol class="steps">${how.map(s=>`<li>${esc(s)}</li>`).join("")}</ol>`:""}
         <div class="lab-actions">
           ${S.canWrite && R.vol?`<input id="labName" class="search" placeholder="Batize o drink" maxlength="40" value="${esc(LAB.ideaName||"")}"><button class="primary" id="labSave">Salvar criação</button>`:""}
+          ${R.vol && S.noite && S.noite.ativa && db?`<button class="primary" id="labOrder">Pedir este drink</button>`:""}
           ${R.vol && !S.guest?`<button class="ghost" data-log="${esc(match&&match.kind==="exato"?match.n:(LAB.ideaName||"Criação da casa"))}" data-log-origem="lab">Registrar no histórico</button>`:""}
           <button class="ghost" id="labReset">Começar de novo</button>
         </div>
@@ -4095,6 +4232,11 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     if(wzClick(e)) return;
     const tf=e.target.closest("[data-transform]"); if(tf){ transformTo(tf.dataset.transform); return; }
     if(e.target.id==="labReset"){ Object.assign(LAB,{sel:{},done:{},ice:"",method:"",glass:"",garnish:"",egg:false,fl:null,ideaName:null,target:[],vibe:{leve:false,forte:false},wz:{step:"vibe",path:[],item:null}}); renderLab(); const s=document.querySelector("#labView .wz"); if(s) s.scrollIntoView({behavior:"smooth",block:"start"}); return; }
+    if(e.target.id==="labOrder"){
+      const match=labMatch();
+      if(match && match.kind==="exato"){ askOrder(match.n, false, null); return; }
+      const c=labSnapshot(); askOrder(c.nome, false, c); return;
+    }
     if(e.target.id==="labSave"){
       const nome=($("labName").value||"").trim(); if(!nome){ $("labName").focus(); toast("Dê um nome ao drink."); return; }
       const itens=labItems().map(x=>({id:x.it.id, nome:x.it.nome, step:x.step, q:x.q}));
@@ -4132,17 +4274,24 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
 
   async function connectSocial(user){
     userNs=user;
-    try{ const me=await user.me(); S.me={id:me.id, name:me.name||"", isOwner:me.isOwner, canEdit:me.canEdit}; }catch(_){}
+    try{ const me=await user.me(); S.me=Object.assign({}, S.me, {id:me.id, name:me.name||"", isOwner:me.isOwner, canEdit:me.canEdit}); }catch(_){}
     db.doc("config/equipe").onSnapshot(d=>{ S.equipe=(d.exists && d.data().membros)||{}; ensureMember(); refreshMode(); }, ()=>{});
     db.doc("config/noite").onSnapshot(d=>{ if(d.exists){ S.noite=Object.assign({}, d.data()); S.noiteLive=true; } else if(!S.pubSnap) S.noite=null; renderNoite(); renderGuest(); }, ()=>{});
     let first=true;
-    const pedQ = (IS_SITE && !isHost()) ? db.collection("pedidos").where("uid","==",S.me.id||"-") : db.collection("pedidos");
-    pedQ.onSnapshot(snap=>{
+    const guestSite = IS_SITE && !isHost();
+    const queries = guestSite ? [db.collection("pedidos").where("uid","==",S.me.id||"-")] : [db.collection("pedidos")];
+    // quem entrou com o Google também vê os pedidos ligados ao e-mail (de outro aparelho ou de antes do login)
+    if(guestSite && S.me.email && S.siteUser && !S.siteUser.isAnonymous) queries.push(db.collection("pedidos").where("email","==",S.me.email));
+    const parts=queries.map(()=>[]);
+    queries.forEach((pedQ,qi)=>pedQ.onSnapshot(snap=>{
       const prev=new Set(S.pedidos.map(p=>p.id));
-      S.pedidos=snap.docs.map(d=>Object.assign({id:d.id}, d.data()||{}));
+      parts[qi]=snap.docs.map(d=>Object.assign({id:d.id}, d.data()||{}));
+      const mp=new Map(); parts.flat().forEach(p=>mp.set(p.id,p)); S.pedidos=[...mp.values()];
       if(!first && isHost() && !S.guest){ const novos=S.pedidos.filter(p=>!prev.has(p.id) && p.status==="fila" && S.noite && p.noite===S.noite.id); if(novos.length){ toast(`Novo pedido: ${novos[0].drink} para ${novos[0].nome}`); try{ navigator.vibrate && navigator.vibrate([120,60,120]); }catch(_){} } }
       first=false; renderNoite(); renderGuest(); renderHist();
-    }, ()=>{});
+    }, ()=>{}));
+    db.collection("alquimia").onSnapshot(snap=>{ S.alq=snap.docs.map(d=>Object.assign({id:d.id}, d.data()||{})); renderNoite(); renderGuest(); }, ()=>{});
+    db.collection("votos").onSnapshot(snap=>{ S.votos=snap.docs.map(d=>Object.assign({id:d.id}, d.data()||{})); renderNoite(); renderGuest(); }, ()=>{});
     if(IS_SITE && !isHost()) return;
     db.collection("historico").onSnapshot(snap=>{ S.hist=snap.docs.map(d=>Object.assign({id:d.id}, d.data()||{})).sort((a,b)=>(b.quando||0)-(a.quando||0)); renderHist(); }, ()=>{});
     db.collection("notas").onSnapshot(snap=>{ const m={}; snap.docs.forEach(d=>{ const v=d.data()||{}; if(v.drink) m[v.drink]=Object.assign({id:d.id},v); }); S.notas=m; renderCarta(); }, ()=>{});
@@ -4159,14 +4308,14 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
   function refreshMode(){ if(S.guest) renderGuest(); }
   function setGuestTab(t){
     S.gtab=t; document.body.classList.toggle("gt-lab", t==="lab"); document.body.classList.toggle("gt-menu", t!=="lab");
-    $("gTabMenu").setAttribute("aria-selected", t!=="lab"); $("gTabLab").setAttribute("aria-selected", t==="lab");
+    $("gTabMenu").setAttribute("aria-selected", t==="menu"); $("gTabLab").setAttribute("aria-selected", t==="lab"); $("gTabHist").setAttribute("aria-selected", t==="hist"); $("gTabAlq").setAttribute("aria-selected", t==="alq");
     if(t==="lab"){ setTab("lab"); renderLab(); } else renderGuest();
     window.scrollTo(0,0);
   }
   function enterGuest(){
     S.guest=true; S.canWrite=false;
     document.body.classList.add("guest-mode"); document.body.classList.remove("booting");
-    $("guestView").hidden=false; $("guestNav").hidden=false;
+    $("guestView").hidden=false; $("guestNav").hidden=false; $("gTabHist").hidden=!S.me.id; $("gTabAlq").hidden=!S.me.id;
     setGuestTab("menu");
     [600,1500,3500,7000].forEach(ms=>setTimeout(()=>{ if(S.guest && S.gtab!=="lab") renderGuest(); }, ms));
   }
@@ -4211,9 +4360,19 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
       <div class="sheet-foot"><div class="right"><button class="ghost" id="dkClose">Voltar</button>${readOnly?"":`<button class="primary" data-ask="${esc(r.n)}" data-kiosk="${kiosk?"1":""}">Pedir este</button>`}</div></div>`;
     const b=$("drinkSheet"); b.classList.add("open"); b.setAttribute("aria-hidden","false");
   }
+  function showCustomRecipe(p){
+    const r=customToRecipe(p.custom, p.drink);
+    $("drinkBody").innerHTML=`<h3 class="dk-name">${esc(p.drink)}</h3><p class="meta" style="white-space:normal">Criação de ${esc(p.nome||"convidado")} no Laboratório${p.obs?` · ${esc(p.obs)}`:""}</p>
+      <h3>Ingredientes</h3><ul class="ings">${r.i.map(x=>`<li><span class="q">${esc(x[0])}</span><span class="l">${esc(x[1])}</span></li>`).join("")}</ul>
+      <h3>Preparo</h3><ol class="steps">${r.s.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>
+      <p class="serve"><b>Copo:</b> ${esc(r.c)}${r.g?`<br><b>Guarnição:</b> ${esc(r.g)}`:""}</p>
+      <div class="sheet-foot"><div class="right"><button class="ghost" id="dkClose">Fechar</button><button class="primary" data-canim="${esc(p.id)}">Preparo animado</button></div></div>`;
+    const b=$("drinkSheet"); b.classList.add("open"); b.setAttribute("aria-hidden","false");
+  }
   function closeDrink(){ const b=$("drinkSheet"); b.classList.remove("open"); b.setAttribute("aria-hidden","true"); }
   $("drinkSheet").addEventListener("click", e=>{
     if(e.target===$("drinkSheet") || e.target.id==="dkClose"){ closeDrink(); return; }
+    const ca=e.target.closest("[data-canim]"); if(ca){ const p=findCustom(ca.dataset.canim); closeDrink(); if(p) openPlayer(customToRecipe(p.custom, p.drink)); return; }
     const a=e.target.closest("[data-ask]"); if(a){ closeDrink(); askOrder(a.dataset.ask, !!a.dataset.kiosk); }
   });
   function guestOrdersHtml(){
@@ -4242,6 +4401,126 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
       ${S.siteUser && S.siteUser.isAnonymous?`<div class="g-keep"><p class="meta" style="white-space:normal">Seu histórico fica salvo neste celular. Para guardar em qualquer aparelho, entre com uma conta.</p><button class="ghost" id="gLoginOpen">Entrar com Google${window.SITE&&window.SITE.facebook?" ou Facebook":""}</button></div>`:""}
     </section>`;
   }
+  /* ---------- Alquimia dos Convidados ---------- */
+  function alqTonight(){ return S.noite && S.noite.id ? (S.alq||[]).filter(a=>a.noite===S.noite.id && !a.oculto) : []; }
+  function votesTonight(){ return S.noite && S.noite.id ? (S.votos||[]).filter(v=>v.noite===S.noite.id) : []; }
+  function alqVotes(id){ return votesTonight().filter(v=>v.alq===id).length; }
+  function myVote(){ const v=votesTonight().find(v=>v.uid===S.me.id); return v?v.alq:null; }
+  function votingOpen(){ return !!(S.noite && S.noite.ativa && S.noite.votacao!=="encerrada"); }
+  function alqName(a){ return a.batismo || a.nome; }
+  function alqNeedsName(){ return alqTonight().some(a=>a.vencedor && !a.batismo && a.autorUid===S.me.id); }
+  function alqAvailable(a){ const fora=new Set((S.noite&&S.noite.fora)||[]); return (a.custom&&a.custom.itens||[]).every(x=>S.items.some(i=>(i.id===x.id||i.nome===x.nome) && available(i) && !fora.has(i.id))); }
+  function alqRanked(){ return alqTonight().map(a=>({a, v:alqVotes(a.id)})).sort((x,y)=>(y.a.vencedor?1:0)-(x.a.vencedor?1:0) || y.v-x.v || (y.a.pedidos||0)-(x.a.pedidos||0) || (x.a.criadoEm||0)-(y.a.criadoEm||0)); }
+  function softLower(s){ const w=String(s||"").split(" "); return (w.length>1 && /^[A-ZÁÉÍÓÚÂÊÔÃÕÇ]/.test(w[1])) ? s : lowerFirst(s); }
+  function alqIngLine(c){ const L=(c.itens||[]).map(x=>`${x.unit==="dash"?`${x.q} dash`:`${String(x.q).replace(".",",")} ml`} ${softLower(x.nome)}`); if(c.egg) L.push("clara de ovo"); return L.join(" · "); }
+  function alqHowLine(c){ const met={batido:"Batido",mexido:"Mexido",dry:"Batido com dry shake",montado:"Montado no copo"}[c.method]||""; const gl=GLASS_TXT[c.glass]||""; return [met, gl].filter(Boolean).join(" · "); }
+  async function publishAlq(cu, autorNome){
+    try{
+      const ref=await db.collection("alquimia").add({noite:S.noite.id, noiteTitulo:S.noite.titulo||"", autorUid:S.me.id||null, autorNome:(autorNome||guestName()||"Convidado").slice(0,40), nome:cu.nome, custom:cu, criadoEm:Date.now(), pedidos:0, vencedor:false, batismo:""});
+      return ref.id;
+    }catch(_){ return null; }
+  }
+  function guestAlqHtml(){
+    let h=`<div class="g-wrap"><div class="g-head">${lockupHTML({ink:"var(--text)",accent:"var(--accent)",ground:"var(--bg)"},1)}<p class="g-title">Alquimia dos Convidados</p></div>`;
+    if(!S.noite || !S.noite.ativa){ h+=`<div class="empty-state"><p>A Alquimia abre junto com a noite. Quando a casa começar a servir, as criações dos convidados aparecem aqui.</p></div>`; return h+guestFootHtml()+`</div>`; }
+    const R=alqRanked(), open=votingOpen(), mine=myVote(), champ=R.find(x=>x.a.vencedor);
+    h+=`<p class="alq-intro">Tudo o que os convidados criaram no Laboratório esta noite. Peça o drink de outra pessoa e vote no seu favorito: quem criar o campeão ganha o direito de batizá-lo, e ele entra na carta da casa.</p>`;
+    if(champ){
+      const a=champ.a, me=a.autorUid===S.me.id;
+      h+=`<section class="alq-champ"><div class="alq-crown" aria-hidden="true">✦</div><span class="alq-kicker">Campeão da noite</span><h2>${esc(alqName(a))}</h2><p>criado por ${esc(a.autorNome||"um convidado")}${a.batismo?"":" · aguardando o batismo"}</p>
+        ${me&&!a.batismo?`<div class="alq-name"><label for="alqBatismo">Seu drink venceu! Que nome ele vai ter na carta?</label><input id="alqBatismo" maxlength="38" placeholder="Ex.: Brisa de Laranjeiras"><button class="primary" data-batizar="${esc(a.id)}">Batizar</button></div>`:""}
+        ${a.batismo&&a.naCarta?`<p class="alq-ok">Já está na carta da casa.</p>`:a.batismo?`<p class="alq-ok">Batizado! A casa vai colocá-lo na carta.</p>`:""}</section>`;
+    }
+    h+=`<div class="alq-status ${open?"on":""}">${open?`Votação aberta · ${votesTonight().length} voto${votesTonight().length===1?"":"s"}${mine?" · você já votou":""}`:"Votação encerrada"}</div>`;
+    if(!R.length) h+=`<div class="empty-state"><p>Ainda não há criações esta noite. Que tal ser o primeiro? Monte o seu drink no Laboratório e peça: ele aparece aqui para todo mundo.</p><button class="primary" data-gtab="lab">Ir ao Laboratório</button></div>`;
+    h+=R.map((x,k)=>{ const a=x.a, me=a.autorUid===S.me.id, voted=mine===a.id, can=alqAvailable(a);
+      return `<article class="alq-card${a.vencedor?" win":""}${voted?" voted":""}"><div class="alq-rank">${k+1}</div><div class="alq-body">
+        <h3>${esc(alqName(a))}${me?`<span class="gh-tag">sua</span>`:""}</h3><p class="alq-by">por ${esc(a.autorNome||"convidado")}${a.batismo&&a.batismo!==a.nome?` · antes “${esc(a.nome)}”`:""}</p>
+        <p class="alq-ing">${esc(alqIngLine(a.custom||{}))}</p><p class="alq-how">${esc(alqHowLine(a.custom||{}))}</p>
+        <div class="alq-meta"><span>♥ ${x.v} voto${x.v===1?"":"s"}</span>${a.pedidos?`<span>pedido ${a.pedidos} ${a.pedidos===1?"vez":"vezes"} por outros</span>`:""}</div>
+        <div class="alq-acts">${can?`<button class="primary" data-alqpedir="${esc(a.id)}">Pedir</button>`:`<span class="meta">Falta ingrediente agora</span>`}
+          ${open&&!me?`<button class="ghost${voted?" on":""}" data-votar="${esc(a.id)}" aria-pressed="${voted}">${voted?"♥ Seu voto":"♡ Votar"}</button>`:""}
+          <button class="linkbtn" data-alqanim="${esc(a.id)}">Ver preparo</button></div></div></article>`; }).join("");
+    return h+guestFootHtml()+`</div>`;
+  }
+  function hostAlqHtml(){
+    const R=alqRanked(); if(!R.length) return `<h3 class="n-sub">Alquimia dos Convidados</h3><p class="meta" style="white-space:normal">Quando um convidado pedir uma criação do Laboratório, ela aparece aqui para votação.</p>`;
+    const open=votingOpen(), total=votesTonight().length;
+    return `<h3 class="n-sub">Alquimia dos Convidados</h3>
+      <p class="meta" style="white-space:normal">${open?`Votação aberta · ${total} voto${total===1?"":"s"}. Quando quiser, coroe o campeão: a votação fecha e o criador recebe o pedido para batizar o drink.`:"Votação encerrada."}</p>
+      <div class="n-actions" style="margin:6px 0">${open?`<button class="ghost" data-alqclose="1">Encerrar votação</button>`:`<button class="ghost" data-alqopen="1">Reabrir votação</button>`}</div>
+      ${R.map((x,k)=>{ const a=x.a; return `<div class="alq-host${a.vencedor?" win":""}"><div><b>${k+1}. ${esc(alqName(a))}</b>${a.vencedor?` <span class="gh-tag">campeão</span>`:""}<span class="meta">por ${esc(a.autorNome||"")} · ♥ ${x.v} · pedido ${a.pedidos||0}× por outros</span><span class="meta">${esc(alqIngLine(a.custom||{}))}</span></div>
+        <div class="n-actions">${a.vencedor?(a.batismo?(a.naCarta?`<span class="meta">Na carta ✓</span>`:`<button class="primary" data-alqcarta="${esc(a.id)}">Colocar “${esc(a.batismo)}” na carta</button>`):`<span class="meta">Aguardando o batismo</span>`):`<button class="ghost" data-coroar="${esc(a.id)}">Coroar</button>`}
+          <button class="linkbtn" data-crec="${esc(a.id)}">Receita</button><button class="linkbtn" data-canim="${esc(a.id)}">Preparo animado</button><button class="linkbtn" data-alqhide="${esc(a.id)}">Remover</button></div></div>`; }).join("")}`;
+  }
+  async function alqHostClick(e){
+    const q=s=>e.target.closest(s); let el;
+    try{
+      if(q("[data-alqclose]")){ await db.doc("config/noite").update({votacao:"encerrada"}); return true; }
+      if(q("[data-alqopen]")){ await db.doc("config/noite").update({votacao:"aberta"}); return true; }
+      if((el=q("[data-coroar]"))){ const a=(S.alq||[]).find(x=>x.id===el.dataset.coroar); if(!a) return true;
+        if(!(await uiConfirm(`Coroar “${alqName(a)}”, de ${a.autorNome||"um convidado"}, como campeão da noite? A votação fecha e ${a.autorNome||"o criador"} poderá batizar o drink.`,"Coroar"))) return true;
+        await Promise.all(alqTonight().filter(x=>x.vencedor && x.id!==a.id).map(x=>db.collection("alquimia").doc(x.id).update({vencedor:false})));
+        await db.collection("alquimia").doc(a.id).update({vencedor:true}); await db.doc("config/noite").update({votacao:"encerrada", campeao:a.id}); toast("Campeão coroado!"); return true; }
+      if((el=q("[data-alqhide]"))){ if(!(await uiConfirm("Remover esta criação da Alquimia? Ela some para os convidados.","Remover"))) return true; await db.collection("alquimia").doc(el.dataset.alqhide).update({oculto:true}); return true; }
+      if((el=q("[data-alqcarta]"))){ const a=(S.alq||[]).find(x=>x.id===el.dataset.alqcarta); if(!a||!a.batismo) return true; const c=a.custom||{};
+        await db.collection("criacoes").add({nome:a.batismo, itens:(c.itens||[]).map(x=>({id:x.id||"", nome:x.nome, step:x.step, q:x.q})), ice:c.ice||"", method:c.method||"", glass:c.glass||"", garnish:c.garnish||"", egg:!!c.egg, custom:c, carta:true, autorNome:a.autorNome||"", noiteTitulo:a.noiteTitulo||"", alq:a.id, criadoEm:Date.now()});
+        await db.collection("alquimia").doc(a.id).update({naCarta:true}); toast(`“${a.batismo}” entrou na carta da casa.`); return true; }
+    }catch(err){ handleWriteError(err); return true; }
+    return false;
+  }
+  function findCustom(id){
+    const p=S.pedidos.find(x=>x.id===id); if(p&&p.custom) return {id, custom:p.custom, drink:p.drink, nome:p.nome, obs:p.obs, lab:true};
+    const a=(S.alq||[]).find(x=>x.id===id); if(a&&a.custom) return {id, custom:a.custom, drink:alqName(a), nome:a.autorNome, obs:"", lab:true};
+    return null;
+  }
+  // campeões batizados entram na carta como receitas de verdade
+  function syncCartaCrea(){
+    for(let k=RECIPES.length-1;k>=0;k--) if(RECIPES[k].dyn) RECIPES.splice(k,1);
+    (S.criacoes||[]).filter(c=>c.carta && c.custom).forEach(c=>{
+      const cu=JSON.parse(JSON.stringify(c.custom));
+      (cu.itens||[]).forEach(x=>{ if(!x.key || !M[x.key] || x.key==="_x"){ const id="dyn_"+norm(x.nome).replace(/[^a-z0-9]+/g,"_"); if(!M[id]) M[id]={any:[norm(x.nome).replace(/[.*+?^${}()|[\]\\]/g,"\\$&")]}; x.key=id; } });
+      const r=customToRecipe(cu, c.nome);
+      Object.assign(r, {dyn:true, b:"Alquimia", mi:(cu.itens||[]).map(x=>softLower(x.nome)).join(", ")+(cu.egg?", clara de ovo":""), mt:`Campeão da Alquimia dos Convidados${c.noiteTitulo?` na ${c.noiteTitulo}`:""}, criado e batizado por ${c.autorNome||"um convidado"}.`, p:"Autoral, criação de convidado", d:`Criação de ${c.autorNome||"convidado"}`, src:"Alquimia dos Convidados"});
+      RECIPES.push(r);
+    });
+  }
+  function myGuestOrders(){ return S.me.id ? S.pedidos.filter(p=>(p.uid===S.me.id || (S.me.email && p.email===S.me.email)) && p.status!=="recusado") : []; }
+  function canReorder(p){ return !!(S.noite && S.noite.ativa) && (p.custom || availableDrinks().some(r=>r.n===p.drink) || doseList(true).some(g=>g.items.some(it=>doseName(it)===p.drink))); }
+  function guestHistHtml(){
+    const mine=myGuestOrders().sort((a,b)=>(b.criadoEm||0)-(a.criadoEm||0));
+    const mode=S.ghMode||"noite";
+    let h=`<div class="g-wrap"><div class="g-head">${lockupHTML({ink:"var(--text)",accent:"var(--accent)",ground:"var(--bg)"},1)}<p class="g-title">Seu histórico</p></div>`;
+    if(!mine.length){ h+=`<div class="empty-state"><p>Você ainda não pediu nenhum drink por aqui. Quando pedir, eles aparecem nesta aba, com as notas que você der.</p><button class="primary" data-gtab="menu">Ver o cardápio</button></div>`; return h+guestFootHtml()+`</div>`; }
+    h+=`<div class="gh-seg" role="tablist"><button data-ghmode="noite" aria-pressed="${mode==="noite"}">Por noite</button><button data-ghmode="drink" aria-pressed="${mode==="drink"}">Por drink</button></div>`;
+    const tag=p=>p.custom?`<span class="gh-tag">criação sua</span>`:"";
+    const rate=p=> p.status==="entregue" ? stars(p.nota||0, `data-rate-order="${esc(p.id)}"`, 20) : `<span class="g-badge">${esc(STATUS_L[p.status]||p.status)}</span>`;
+    const again=p=> canReorder(p) ? `<button class="ghost g-again" data-reorder="${esc(p.id)}">Pedir de novo</button>` : "";
+    if(mode==="noite"){
+      const groups=new Map(); mine.forEach(p=>{ const k=p.noite||"?"; if(!groups.has(k)) groups.set(k,[]); groups.get(k).push(p); });
+      [...groups.entries()].forEach(([k,list])=>{
+        const first=list[list.length-1], tit=list.find(x=>x.noiteTitulo)?.noiteTitulo || `Noite de ${fmtDate(first.criadoEm)}`;
+        const now = S.noite && S.noite.ativa && S.noite.id===k;
+        h+=`<section class="gh-night"><div class="gh-nh"><h2>${esc(tit)}</h2><span>${now?"hoje, agora":fmtDate(first.criadoEm)} · ${list.length} drink${list.length>1?"s":""}</span></div>
+          ${list.map(p=>`<div class="g-order gh-row"><div><b>${esc(p.drink)}</b>${tag(p)}<span class="meta">${fmtTime(p.criadoEm)}${p.obs?` · ${esc(p.obs)}`:""}</span></div>${rate(p)}${again(p)}</div>`).join("")}</section>`;
+      });
+    } else {
+      const by=new Map(); mine.forEach(p=>{ const k=p.drink; if(!by.has(k)) by.set(k,[]); by.get(k).push(p); });
+      const rows=[...by.entries()].map(([n,list])=>{ const rated=list.filter(x=>x.nota); const avg=rated.length? rated.reduce((a,x)=>a+x.nota,0)/rated.length : 0; return {n,list,avg,last:list[0]}; }).sort((a,b)=>b.avg-a.avg || (b.last.criadoEm||0)-(a.last.criadoEm||0));
+      h+=rows.map(x=>{ const ent=x.list.find(p=>p.status==="entregue"); return `<div class="g-order gh-row"><div><b>${esc(x.n)}</b>${tag(x.last)}<span class="meta">${x.list.length>1?`${x.list.length} vezes · `:""}última em ${fmtDate(x.last.criadoEm)}${x.avg?` · média ${x.avg.toFixed(1).replace(".",",")}`:""}</span></div>${ent?stars(ent.nota||0, `data-rate-order="${esc(ent.id)}"`, 20):`<span class="g-badge">${esc(STATUS_L[x.last.status]||"")}</span>`}${again(x.last)}</div>`; }).join("");
+    }
+    const sug=guestSuggestions(mine);
+    if(sug.length) h+=`<h3 class="g-sug-h">Para provar a seguir</h3><p class="meta" style="white-space:normal;margin:0 0 6px">Escolhidos a partir dos drinks que você mais gostou.</p><div class="g-sug">${sug.map(r=>`<button class="chip" data-open="${esc(r.n)}">${esc(r.n)}</button>`).join("")}</div>`;
+    if(S.siteUser && S.siteUser.isAnonymous) h+=`<div class="g-keep"><p class="meta" style="white-space:normal">Como visitante, seu histórico fica salvo só neste aparelho. Entre com o Google e ele passa a acompanhar a sua conta: troque de celular ou de número e continua tudo aqui.</p><button class="ghost" id="gLoginOpen">Entrar com Google</button></div>`;
+    return h+guestFootHtml()+`</div>`;
+  }
+  function guestSuggestions(mine){
+    const by={}; mine.forEach(p=>{ if(p.nota) (by[p.drink]=by[p.drink]||[]).push(p.nota); });
+    const liked=Object.entries(by).filter(([,v])=>v.reduce((a,b)=>a+b,0)/v.length>=4).map(([n])=>RECIPES.find(r=>r.n===n)).filter(Boolean);
+    if(!liked.length) return [];
+    const tried=new Set(mine.map(p=>p.drink)), words=r=>new Set(norm(r.p||"").split(/[ ,]+/).filter(w=>w.length>3));
+    return availableDrinks().filter(r=>!tried.has(r.n)).map(r=>{ const w=words(r); let sc=0; liked.forEach(l=>{ if(l.b===r.b) sc+=2; words(l).forEach(x=>{ if(w.has(x)) sc+=1; }); }); return {r,sc}; }).filter(x=>x.sc>0).sort((a,b)=>b.sc-a.sc).slice(0,4).map(x=>x.r);
+  }
   function guestFootHtml(){
     const legal=`<p class="g-legal">Proibido para menores de 18 anos. Beba com moderação. Se beber, não dirija.${IS_SITE?` · <a href="privacidade.html">Privacidade</a>`:""}</p>`;
     if(!IS_SITE || S.preview) return legal;
@@ -4257,26 +4536,33 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
       ${kiosk?`<p class="g-intro">Escolha seu drink, toque em <b>Pedir</b> e diga seu nome. A gente prepara e chama você.</p>`:`<label class="g-name"><span>Seu nome</span><input id="gName" class="search" maxlength="30" placeholder="Como devemos chamar você?" value="${esc(guestName())}"></label>`}
       ${kiosk||S.waGuest?"":guestOrdersHtml()}
       ${guestMenuHtml(kiosk)}
-      ${kiosk?"":guestMineHtml()}
+      ${kiosk||!S.me.id?"":`<button class="g-histlink" data-gtab="hist">Ver o seu histórico de drinks →</button>`}
       ${kiosk?`<button class="ghost k-exit" id="kioskExit">Sair do modo balcão</button>`:S.waGuest?`<p class="meta g-foot">Os pedidos são enviados pelo WhatsApp do bar.</p>`:guestFootHtml()}
     </div>`;
   }
   function renderGuest(){
     if(!S.items.length && S.pubSnap && S.pubSnap.items) S.items=S.pubSnap.items.slice();
     if((!S.noite || (S.pubSnap && S.pubSnap.guest && !S.noiteLive)) && S.pubSnap && S.pubSnap.guest){ const g=S.pubSnap.guest; S.noite={ativa:!!g.ativo, titulo:g.titulo, id:"pub", whatsapp:g.whatsapp, fora:g.fora||[]}; }
-    const gv=$("guestView"); if(gv && S.guest) gv.innerHTML=guestHtml(false);
+    const gv=$("guestView"); if(gv && S.guest) gv.innerHTML = S.gtab==="hist" ? guestHistHtml() : S.gtab==="alq" ? guestAlqHtml() : guestHtml(false);
+    const ta=$("gTabAlq"); if(ta) ta.classList.toggle("dot", alqNeedsName());
     const kv=$("kioskView"); if(kv && !kv.hidden) kv.innerHTML=guestHtml(true);
   }
-  async function placeOrder(drink, nome, obs, origem){
+  async function placeOrder(drink, nome, obs, origem, custom, alq){
     if(!S.noite || !S.noite.ativa){ toast("Os pedidos ainda não estão abertos."); return; }
     try{
-      const ref=await db.collection("pedidos").add({noite:S.noite.id, nome:nome||"Convidado", drink, obs:obs||"", status:"fila", criadoEm:Date.now(), atualizadoEm:Date.now(), uid:S.me.id||null, origem, nota:null});
+      const doc={noite:S.noite.id, noiteTitulo:S.noite.titulo||"", nome:nome||"Convidado", drink, obs:obs||"", status:"fila", criadoEm:Date.now(), atualizadoEm:Date.now(), uid:S.me.id||null, origem, nota:null};
+      if(custom) doc.custom=custom;
+      if(alq) doc.alq=alq;
+      if(IS_SITE && !isHost() && S.siteUser && !S.siteUser.isAnonymous && S.me.email) doc.email=S.me.email;
+      const ref=await db.collection("pedidos").add(doc);
       if(origem==="convidado") addMyOrder(ref.id);
       toast(`Pedido feito: ${drink}. Já já sai!`);
       renderGuest();
     }catch(e){ toast("Não foi possível enviar o pedido. Peça direto para a casa."); }
   }
-  function askOrder(drink, kiosk){
+  function askOrder(drink, kiosk, custom, alq){
+    S.pendingCustom = custom || null; S.pendingAlq = alq || null;
+    $("oAlqField").hidden = !(custom && !alq && !kiosk); $("oAlq").checked = true;
     const back=$("orderSheet"); back.classList.add("open"); back.setAttribute("aria-hidden","false");
     const hostAdd = kiosk==="host";
     $("orderTitle").textContent = hostAdd ? "Anotar pedido" : drink;
@@ -4305,9 +4591,24 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     const mode=back.dataset.kiosk, drink = mode==="host" ? $("oDrink").value : back.dataset.drink;
     if(!mode) setGuestName(nome);
     closeOrder();
-    await placeOrder(drink, nome, [iceTxt(), $("oObs").value.trim()].filter(Boolean).join(", "), mode==="host"?"anfitriao":mode?"balcao":"convidado");
+    const cu = mode==="host" ? null : S.pendingCustom; let alq = mode==="host" ? null : S.pendingAlq; S.pendingCustom=null; S.pendingAlq=null;
+    if(cu && !alq && !$("oAlqField").hidden && $("oAlq").checked) alq = await publishAlq(cu, nome);
+    const fromAlq = alq ? (S.alq||[]).find(a=>a.id===alq) : null;
+    await placeOrder(drink, nome, [iceTxt(), $("oObs").value.trim()].filter(Boolean).join(", "), mode==="host"?"anfitriao":mode?"balcao":fromAlq&&fromAlq.autorUid!==S.me.id?"alquimia":cu?"laboratorio":"convidado", cu, alq);
+    if(fromAlq && fromAlq.autorUid!==S.me.id){ try{ await db.collection("alquimia").doc(alq).update({pedidos:(fromAlq.pedidos||0)+1}); }catch(_){} }
   };
   function guestClick(e, kiosk){
+    const gt=e.target.closest("[data-gtab]"); if(gt){ setGuestTab(gt.dataset.gtab); return; }
+    const ap=e.target.closest("[data-alqpedir]"); if(ap){ const a=(S.alq||[]).find(x=>x.id===ap.dataset.alqpedir); if(a) askOrder(alqName(a), false, a.custom, a.id); return; }
+    const an=e.target.closest("[data-alqanim]"); if(an){ const a=(S.alq||[]).find(x=>x.id===an.dataset.alqanim); if(a) openPlayer(customToRecipe(a.custom, alqName(a))); return; }
+    const vt=e.target.closest("[data-votar]"); if(vt){ const id=vt.dataset.votar, cur=myVote();
+      if(!S.me.id || !votingOpen()) return;
+      const ref=db.collection("votos").doc(S.noite.id+"_"+S.me.id);
+      (cur===id ? ref.delete() : ref.set({noite:S.noite.id, uid:S.me.id, alq:id, em:Date.now()})).then(()=>toast(cur===id?"Voto retirado.":"Voto registrado!")).catch(()=>toast("Não foi possível votar agora.")); return; }
+    const bz=e.target.closest("[data-batizar]"); if(bz){ const n=($("alqBatismo").value||"").trim().replace(/\s+/g," "); if(n.length<2){ $("alqBatismo").focus(); toast("Escolha um nome para o drink."); return; }
+      db.collection("alquimia").doc(bz.dataset.batizar).update({batismo:n.slice(0,38), atualizadoEm:Date.now()}).then(()=>toast(`Batizado: ${n}!`)).catch(()=>toast("Não foi possível salvar o nome.")); return; }
+    const ghm=e.target.closest("[data-ghmode]"); if(ghm){ S.ghMode=ghm.dataset.ghmode; renderGuest(); return; }
+    const ro=e.target.closest("[data-reorder]"); if(ro){ const p=S.pedidos.find(x=>x.id===ro.dataset.reorder); if(p) askOrder(p.drink, false, p.custom||null, p.alq||null); return; }
     const a=e.target.closest("[data-ask]"); if(a){ askOrder(a.dataset.ask, kiosk); return; }
     const gc=e.target.closest("[data-gcat]"); if(gc){ S.gmCat=gc.dataset.gcat; renderGuest(); const f=document.querySelector(kiosk?"#kioskView .gm-filters":"#guestView .gm-filters"); if(f) f.scrollIntoView({block:"start"}); return; }
     const gm=e.target.closest("[data-gmood]"); if(gm){ S.gmMood = S.gmMood===gm.dataset.gmood ? null : gm.dataset.gmood; renderGuest(); return; }
@@ -4320,6 +4621,8 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
   ["guestView","kioskView"].forEach(id=>$(id).addEventListener("keydown", e=>{ if((e.key==="Enter"||e.key===" ") && e.target.matches("[data-open]")){ e.preventDefault(); openDrink(e.target.dataset.open, id==="kioskView"); } }));
   $("gTabMenu").onclick=()=>setGuestTab("menu");
   $("gTabLab").onclick=()=>setGuestTab("lab");
+  $("gTabHist").onclick=()=>setGuestTab("hist");
+  $("gTabAlq").onclick=()=>setGuestTab("alq");
   $("kioskView").addEventListener("click", e=>guestClick(e,true));
   $("guestView").addEventListener("change", e=>{ if(e.target.id==="gName") setGuestName(e.target.value.trim()); });
 
@@ -4405,7 +4708,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     }
     const mine=S.pedidos.filter(p=>p.noite===N.id);
     const stale = N.cardapioHash && N.cardapioHash!==menuHash();
-    const col=(st,label,btns)=>{ const L=mine.filter(p=>p.status===st).sort((a,b)=>(a.criadoEm||0)-(b.criadoEm||0)); return `<section class="n-col"><h3>${label}<span>${L.length}</span></h3>${L.map(p=>`<div class="n-card"><div class="n-c-top"><b>${esc(p.drink)}</b><span>${fmtTime(p.criadoEm)}</span></div><div class="n-c-who">${esc(p.nome)}${p.obs?`<em>${esc(p.obs)}</em>`:""}</div><div class="n-c-act">${btns(p)}</div></div>`).join("")||`<p class="meta">Nada aqui.</p>`}</section>`; };
+    const col=(st,label,btns)=>{ const L=mine.filter(p=>p.status===st).sort((a,b)=>(a.criadoEm||0)-(b.criadoEm||0)); return `<section class="n-col"><h3>${label}<span>${L.length}</span></h3>${L.map(p=>`<div class="n-card"><div class="n-c-top"><b>${esc(p.drink)}</b><span>${fmtTime(p.criadoEm)}</span></div><div class="n-c-who">${esc(p.nome)}${p.obs?`<em>${esc(p.obs)}</em>`:""}</div>${p.custom?`<div class="n-custom"><span>Criação do convidado no Laboratório</span><button class="linkbtn" data-crec="${esc(p.id)}">Ver receita</button><button class="linkbtn" data-canim="${esc(p.id)}">Preparo animado</button></div>`:""}<div class="n-c-act">${btns(p)}</div></div>`).join("")||`<p class="meta">Nada aqui.</p>`}</section>`; };
     const has=n=>RECIPES.find(r=>r.n===n&&r.a);
     box.innerHTML = `<div class="n-head"><div><h2 class="lab-title">${esc(N.titulo||"Noite de convidados")}</h2><p class="meta">Começou às ${fmtTime(N.inicio)}.</p></div><button class="ghost" id="nEnd">Encerrar a noite</button></div>
       <div class="n-qr">
@@ -4432,6 +4735,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
         ${col("pronto","Pronto para servir",p=>`<button class="primary" data-st="entregue" data-id="${esc(p.id)}">Entregue</button>`)}
       </div>
       ${mine.some(p=>p.status==="entregue")?`<details class="n-done"><summary>Servidos (${mine.filter(p=>p.status==="entregue").length})</summary>${mine.filter(p=>p.status==="entregue").sort((a,b)=>(b.atualizadoEm||0)-(a.atualizadoEm||0)).map(p=>`<div class="n-done-row"><span><b>${esc(p.drink)}</b> para ${esc(p.nome)}</span>${p.nota?stars(p.nota,"",14):`<span class="meta">sem nota</span>`}</div>`).join("")}</details>`:""}`;
+    box.insertAdjacentHTML("beforeend", `<section class="n-alq">${hostAlqHtml()}</section>`);
     if(!S.qrSvg) qrSvg(PUBLIC_URL, 220).then(r=>{ S.qrSvg=r.svg; const b=$("qrBox"); if(b) b.innerHTML=r.svg; }).catch(()=>{ const b=$("qrBox"); if(b) b.innerHTML=`<span class="meta">Não foi possível gerar o QR agora.</span>`; });
   }
   function foraHtml(){
@@ -4470,6 +4774,9 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
   $("noiteView").addEventListener("click", async e=>{
     if(e.target.id==="nLinkTxt"){ e.target.select(); return; }
     const fo=e.target.closest("[data-fora]"); if(fo){ toggleFora(fo.dataset.fora.split(",")); return; }
+    const ca=e.target.closest("[data-canim]"); if(ca){ const p=findCustom(ca.dataset.canim); if(p) openPlayer(customToRecipe(p.custom, p.drink)); return; }
+    const cr=e.target.closest("[data-crec]"); if(cr){ const p=findCustom(cr.dataset.crec); if(p) showCustomRecipe(p); return; }
+    if(await alqHostClick(e)) return;
     const b=e.target.closest("[data-st]"); if(b){ setStatus(b.dataset.id, b.dataset.st); return; }
     if(e.target.id==="nStart"){
       const t=($("nTitle").value||"").trim()||"Noite de convidados", wa=($("nWa").value||"").replace(/\D/g,"");
@@ -4659,6 +4966,46 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
   }
   $("exportBtn").onclick=exportCopy;
 
+  /* ---------- abertura animada (convidado) ---------- */
+  function playIntro(force){
+    try{ if(!force && sessionStorage.getItem("lcb-intro")==="1") return; sessionStorage.setItem("lcb-intro","1"); }catch(_){}
+    const el=$("intro"); if(!el) return;
+    const nome=(guestName()||"").split(" ")[0];
+    const night = S.noite && S.noite.ativa ? S.noite.titulo : "";
+    const vw=Math.min(window.innerWidth, 520), m=Math.max(.72, Math.min(1.15, (vw-36)/330));
+    el.innerHTML=`<div class="in-stage"><div class="in-logo">${lockupHTML({ink:"#f6efe5",accent:"#d3a283",ground:"#2a1f18"}, m)}</div>
+      <p class="in-hi">${nome?`Que bom ter você aqui, ${esc(nome)}.`:"Que bom ter você aqui."}</p>
+      ${night?`<p class="in-night">${esc(night)}</p>`:""}
+      <button class="in-skip" type="button">Entrar</button></div>`;
+    el.hidden=false; el.classList.remove("out","go"); document.body.classList.add("intro-on");
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // marca as peças da logo para animar: taça, líquido, casca, estrelas, letras e assinatura
+    const badge=el.querySelector(".badge"), svg=badge.querySelector("svg"), kids=[...svg.children];
+    const [liq, men, halo, ink, peel, st1, st2, base, dia]=kids;
+    const NS="http://www.w3.org/2000/svg";
+    [halo,ink].forEach(g=>[...g.children].forEach((p,k)=>{ p.setAttribute("pathLength","1"); p.classList.add("in-draw"); p.style.animationDelay=(0.35+k*0.22)+"s"; }));
+    liq.classList.add("in-liqfin"); men.classList.add("in-men");
+    const full=liq.cloneNode(); full.removeAttribute("class"); full.setAttribute("class","in-liqfull"); full.style.fillOpacity=".92"; svg.insertBefore(full, halo);
+    for(let k=0;k<6;k++){ const c=document.createElementNS(NS,"circle"); c.setAttribute("cx", 262+k*15); c.setAttribute("cy", 280-(k%3)*4); c.setAttribute("r", 2.2+(k%2)); c.setAttribute("class","in-bub"); c.style.animationDelay=(1.75+k*0.16)+"s"; svg.insertBefore(c, halo); }
+    peel.setAttribute("pathLength","1"); peel.classList.add("in-peel"); st1.classList.add("in-star"); st2.classList.add("in-star","s2");
+    base.classList.add("in-base"); dia.classList.add("in-base");
+    const spans=[...badge.querySelectorAll(":scope > span")]; if(spans[0]) spans[0].classList.add("in-H"); if(spans[1]) spans[1].classList.add("in-L");
+    const lock=el.querySelector(".lockup"), sep=lock.children[1], words=lock.children[2];
+    sep.classList.add("in-sep");
+    const w=[...words.children]; if(w[0]){ w[0].innerHTML=[...w[0].textContent].map((c,k)=>`<i class="in-ch" style="animation-delay:${(3.15+k*0.07).toFixed(2)}s">${esc(c)}</i>`).join(""); }
+    if(w[1]) w[1].classList.add("in-caps"); if(w[2]) w[2].classList.add("in-est");
+    // zoom: a taça começa grande no centro e encolhe até o lugar dela na logo
+    const r=badge.getBoundingClientRect(), cx=window.innerWidth/2, cy=window.innerHeight*0.44;
+    const s=Math.min(3, (Math.min(window.innerWidth, window.innerHeight)*0.78)/r.width);
+    badge.style.setProperty("--dx", (cx-(r.left+r.width/2))+"px"); badge.style.setProperty("--dy", (cy-(r.top+r.height/2))+"px"); badge.style.setProperty("--s", s.toFixed(3));
+    badge.classList.add("in-zoom");
+    requestAnimationFrame(()=>el.classList.add("go"));
+    const done=()=>{ if(el.hidden || el.classList.contains("out")) return; el.classList.add("out"); setTimeout(()=>{ el.hidden=true; el.innerHTML=""; el.classList.remove("out","go"); document.body.classList.remove("intro-on"); }, 650); };
+    el.onclick=done;
+    setTimeout(done, reduce?2200:6400);
+  }
+  function maybeIntro(){ if(S.guest && !S.preview && ageOk() && $("welcome").hidden && $("ageGate").hidden) playIntro(); }
+
   /* ---------- confirmação de maioridade ---------- */
   function ageOk(){ try{ if(sessionStorage.getItem("lcb-age")==="1") return true; const v=+localStorage.getItem("lcb-age-ok"); return v && (Date.now()-v) < 30*86400000; }catch(_){ return false; } }
   function openGate(){ $("gateLogo").innerHTML=lockupHTML({ink:"#3a2a20",accent:"#96604a",ground:"#f6efe5"},1); $("ageGate").hidden=false; setTimeout(()=>$("gDia").focus(),80); }
@@ -4673,7 +5020,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     if(age<18){ err.textContent="Desculpe, o acesso é permitido apenas para maiores de 18 anos."; $("gateOk").disabled=true; try{ sessionStorage.setItem("lcb-age-no","1"); }catch(_){} return; }
     try{ sessionStorage.setItem("lcb-age","1"); if($("gRemember").checked) localStorage.setItem("lcb-age-ok", String(Date.now())); }catch(_){}
     $("ageGate").hidden=true;
-    if(S.welcomeAfterGate && S.showWelcome){ S.welcomeAfterGate=false; S.showWelcome(); }
+    if(S.welcomeAfterGate && S.showWelcome){ S.welcomeAfterGate=false; S.showWelcome(); } else maybeIntro();
   };
   try{ if(sessionStorage.getItem("lcb-age-no")==="1"){ $("gateOk").disabled=true; $("gateErr").textContent="Desculpe, o acesso é permitido apenas para maiores de 18 anos."; } }catch(_){}
   if(!ageOk()) openGate();
@@ -4713,7 +5060,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
       for(const id in queued){ const it=S.items.find(i=>i.id===id); if(it) Object.assign(it,queued[id]); }
       S.mode="ready"; render();
     }, err=>{ S.mode="offline"; render(); });
-    try{ db.collection("criacoes").onSnapshot(snap=>{ S.criacoes=snap.docs.map(d=>Object.assign({id:d.id}, d.data()||{})); if(S.mode==="ready") renderLab(); }, ()=>{}); }catch(_){}
+    try{ db.collection("criacoes").onSnapshot(snap=>{ const before=RECIPES.filter(r=>r.dyn).map(r=>r.n).join("|"); S.criacoes=snap.docs.map(d=>Object.assign({id:d.id}, d.data()||{})); syncCartaCrea(); const after=RECIPES.filter(r=>r.dyn).map(r=>r.n).join("|"); if(S.mode==="ready"){ if(before!==after) render(); else renderLab(); } }, ()=>{}); }catch(_){}
   }
 
   /* ---------- site próprio (Firebase) ---------- */
@@ -4728,15 +5075,22 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     const setWelDone=()=>{ try{ localStorage.setItem("lcb-welcome","1"); }catch(_){} };
     const showWelcome=()=>{ $("welLogo").innerHTML=lockupHTML({ink:"#3a2a20",accent:"#96604a",ground:"#f6efe5"},1); $("welName").value=guestName(); $("welcome").hidden=false; };
     S.showWelcome=showWelcome;
+    // antes de trocar de usuário, liga os pedidos deste aparelho ao e-mail da conta Google
+    async function carryOrders(err){
+      const em=String(err.email || (err.customData && err.customData.email) || "").toLowerCase(); const cur=auth.currentUser;
+      if(!em || !cur || !cur.isAnonymous) return;
+      const mine=S.pedidos.filter(p=>p.uid===cur.uid && !p.email);
+      await Promise.all(mine.map(p=>db.collection("pedidos").doc(p.id).update({email:em, atualizadoEm:Date.now()}).catch(()=>{})));
+    }
     async function signIn(kind){
       const cur=auth.currentUser;
       try{
-        if(cur && cur.isAnonymous){ await cur.linkWithPopup(provider(kind)); }
+        if(cur && cur.isAnonymous){ const res=await cur.linkWithPopup(provider(kind)); const em=String((res&&res.user&&res.user.email)||"").toLowerCase(); if(em) await Promise.all(S.pedidos.filter(p=>p.uid===cur.uid && !p.email).map(p=>db.collection("pedidos").doc(p.id).update({email:em, atualizadoEm:Date.now()}).catch(()=>{}))); }
         else await auth.signInWithPopup(provider(kind));
         setWelDone(); location.reload();
       }catch(err){
         const c=err&&err.code;
-        if((c==="auth/credential-already-in-use"||c==="auth/email-already-in-use") && err.credential){ try{ await auth.signInWithCredential(err.credential); setWelDone(); location.reload(); }catch(_){ toast("Não foi possível entrar."); } return; }
+        if((c==="auth/credential-already-in-use"||c==="auth/email-already-in-use") && err.credential){ await carryOrders(err); try{ await auth.signInWithCredential(err.credential); setWelDone(); location.reload(); }catch(_){ toast("Não foi possível entrar."); } return; }
         if(c==="auth/account-exists-with-different-credential") { toast("Esse e-mail já entrou com outra conta. Use o Google."); return; }
         if(c==="auth/popup-closed-by-user"||c==="auth/cancelled-popup-request") return;
         if(c==="auth/popup-blocked"){ toast("O navegador bloqueou a janela de login. Libere pop-ups para este site."); return; }
@@ -4755,6 +5109,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
       if(owner){ enterHost(); $("siteActs").hidden=false; $("siteWho").textContent=O.name; } else enterGuest();
       if(!owner && u.isAnonymous && !welDone()){ if(ageOk()) showWelcome(); else S.welcomeAfterGate=true; }
       if(!u.isAnonymous && !guestName() && u.displayName) setGuestName(u.displayName.split(" ")[0]);
+      if(!owner) setTimeout(maybeIntro, 300);
       S.canWrite=owner;
       try{ connectSocial(userShim); }catch(_){}
       subscribeItems();
@@ -4765,12 +5120,12 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
       if(id==="welGoogle") return signIn("google");
       if(id==="welFacebook") return signIn("facebook");
       if(id==="gLoginOpen"){ showWelcome(); return; }
-      if(id==="welGuest"){ const n=($("welName").value||"").trim(); if(!n){ $("welName").focus(); toast("Diga seu nome para a gente chamar você."); return; } setGuestName(n); setWelDone(); $("welcome").hidden=true; renderGuest(); return; }
+      if(id==="welGuest"){ const n=($("welName").value||"").trim(); if(!n){ $("welName").focus(); toast("Diga seu nome para a gente chamar você."); return; } setGuestName(n); setWelDone(); $("welcome").hidden=true; renderGuest(); maybeIntro(); return; }
       if(id==="gLogout"){ if(!(await uiConfirm("Sair da sua conta neste aparelho?","Sair"))) return; try{ localStorage.removeItem("lcb-welcome"); }catch(_){} await auth.signOut(); location.reload(); return; }
       if(id==="gOwnerLogin"){ return signIn("google"); }
       if(e.target.id==="gLinkGoogle"){
         try{ await auth.currentUser.linkWithPopup(provider()); toast("Pronto! Seu histórico está guardado na sua conta Google."); renderGuest(); }
-        catch(err){ if(err && err.code==="auth/credential-already-in-use" && err.credential){ try{ await auth.signInWithCredential(err.credential); }catch(_){ toast("Não foi possível entrar."); } } else if(!(err&&err.code==="auth/popup-closed-by-user")) toast("Não foi possível entrar: "+(err&&err.code||"erro")); }
+        catch(err){ if(err && err.code==="auth/credential-already-in-use" && err.credential){ await carryOrders(err); try{ await auth.signInWithCredential(err.credential); }catch(_){ toast("Não foi possível entrar."); } } else if(!(err&&err.code==="auth/popup-closed-by-user")) toast("Não foi possível entrar: "+(err&&err.code||"erro")); }
       }
     });
     $("logoutBtn").onclick=async ()=>{ if(!(await uiConfirm("Sair da conta da casa neste aparelho?","Sair"))) return; await auth.signOut(); location.reload(); };
