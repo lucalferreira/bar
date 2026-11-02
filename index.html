@@ -67,8 +67,8 @@ h2.cat span{font-family:var(--sans);font-size:13px;color:var(--muted)}
 .meta{font-size:13.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .meta .exp{color:var(--warn);font-weight:600}
 .meta .exp.bad{color:var(--danger)}
-.levels{display:flex;gap:4px;margin-top:8px}
-.levels button{flex:1;border:1px solid var(--line);background:var(--surface);padding:6px 2px;border-radius:8px;font-size:13px;color:var(--muted)}
+.levels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;margin-top:8px}
+.levels button{min-width:0;white-space:nowrap;letter-spacing:-.01em;border:1px solid var(--line);background:var(--surface);padding:6px 2px;border-radius:8px;font-size:13px;color:var(--muted)}
 .levels button[aria-pressed="true"]{background:var(--accentFill);border-color:var(--accentFill);color:var(--onAccent);font-weight:700}
 .levels button[data-l="acabou"][aria-pressed="true"]{background:var(--danger);border-color:var(--danger);color:#fff}
 .counter{display:flex;align-items:center;gap:6px;margin-top:8px}
@@ -209,6 +209,8 @@ h2.cat span{font-family:var(--sans);font-size:13px;color:var(--muted)}
 .wz-row.sel{background:#d3a283;color:#2a1f18;border-color:#f6efe5}
 .wz-row.sel small{color:#4b3a2f}.wz-row.sel .wz-rq{color:#2a1f18}
 
+[hidden]{display:none!important}
+body{overflow-x:clip}
 .site-acts{display:flex;gap:14px;align-items:center;margin-top:6px;flex-wrap:wrap}
 .g-mine{margin-top:26px}.g-mine .g-order{flex-wrap:wrap}
 .g-again{margin-left:auto}
@@ -362,6 +364,14 @@ details.drink[open] .dmore{display:none}
 nav.tabs{overflow-x:auto;scrollbar-width:none}
 nav.tabs::-webkit-scrollbar{display:none}
 nav.tabs button{flex:1 0 auto;padding:10px 12px;white-space:nowrap}
+nav.tabs .sh{display:none}
+@media (max-width:640px){
+  nav.tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px;overflow:visible}
+  nav.tabs button{min-width:0;padding:9px 2px;font-size:clamp(12px,3.6vw,14.5px);overflow:hidden;text-overflow:ellipsis}
+  nav.tabs button{position:relative}
+  nav.tabs .count{position:absolute;top:0;right:0;box-shadow:0 0 0 2px var(--surface2);margin:0;min-width:16px;padding:0 4px;font-size:10.5px;line-height:16px}
+}
+@media (max-width:380px){ nav.tabs .fl{display:none} nav.tabs .sh{display:inline} }
 /* ---------- sugestões ---------- */
 .sg-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:10px 0}
 .sg-top{display:block}
@@ -579,8 +589,6 @@ body.kiosk-on .main-wrap, body.kiosk-on #addBtn{display:none !important}
 .wa-btn.off{opacity:.55}
 .g-foot{text-align:center;margin-top:28px}
 
-.g-nav button{padding:10px 14px;font-size:14.5px}
-@media (max-width:430px){.g-nav{max-width:calc(100vw - 16px)}.g-nav button{padding:10px 9px;font-size:13.5px}}
 .g-nav button.dot{position:relative}.g-nav button.dot::after{content:"";position:absolute;top:8px;right:6px;width:8px;height:8px;border-radius:50%;background:#e2563f}
 .o-alq{display:flex;gap:10px;align-items:flex-start;background:var(--surface2);border-radius:10px;padding:10px 12px;margin:0 0 12px;font-size:13.5px;line-height:1.4;color:var(--muted);cursor:pointer}
 .o-alq[hidden]{display:none}.o-alq b{color:var(--text)}.o-alq input{width:20px;height:20px;margin-top:2px;accent-color:var(--accentFill);flex:none}
@@ -613,7 +621,7 @@ body.kiosk-on .main-wrap, body.kiosk-on #addBtn{display:none !important}
 .alq-host{display:grid;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0}
 .alq-host.win{border-color:#d1ad53}
 .alq-host .meta{display:block;white-space:normal}
-.g-histlink{display:block;margin:22px auto 0;background:none;border:0;color:var(--accent);font:inherit;font-weight:600;font-size:15px;cursor:pointer}
+.g-histlink{display:block;padding:10px 12px;margin:14px auto 0;background:none;border:0;color:var(--accent);font:inherit;font-weight:600;font-size:15px;cursor:pointer}
 .gh-seg{display:flex;gap:4px;background:var(--surface2);padding:4px;border-radius:999px;width:fit-content;margin:4px auto 16px}
 .gh-seg button{border:0;background:none;font:inherit;font-weight:600;font-size:14px;color:var(--muted);padding:7px 16px;border-radius:999px;cursor:pointer}
 .gh-seg button[aria-pressed="true"]{background:var(--surface);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.1)}
@@ -734,9 +742,11 @@ body.guest-mode.gt-lab .main-wrap{display:block !important}
 body.guest-mode.gt-lab .main-wrap > header.top .status, body.guest-mode.gt-lab .main-wrap > header.top #exportBtn, body.guest-mode.gt-lab .main-wrap > header.top small, body.guest-mode.gt-lab nav.tabs{display:none !important}
 body.guest-mode.gt-lab .main-wrap > section:not(#view-lab){display:none !important}
 body.guest-mode{padding-bottom:72px}
-.g-nav{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;gap:4px;background:var(--surface2);padding:4px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.g-nav{position:fixed;left:8px;right:8px;margin:0 auto;max-width:560px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;gap:2px;background:var(--surface2);padding:4px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
 .g-nav[hidden]{display:none}
-.g-nav button{border:0;background:transparent;padding:10px 20px;border-radius:999px;font-weight:600;color:var(--muted);min-height:44px}
+.g-nav button{flex:1 1 0;min-width:0;border:0;background:transparent;padding:10px 4px;border-radius:999px;font-weight:600;font-size:clamp(12.5px,3.7vw,15.5px);color:var(--muted);min-height:44px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.g-nav .sh{display:none}
+@media (max-width:345px){.g-nav .fl{display:none}.g-nav .sh{display:inline}}
 .g-nav button[aria-selected="true"]{background:var(--accentFill);color:var(--onAccent)}
 .n-link{display:flex;flex-direction:column;gap:4px;margin:12px 0 8px;font-size:13.5px;font-weight:600}
 .n-link input{font-size:13.5px;color:var(--muted)}
@@ -857,10 +867,14 @@ body.guest-mode #drinkSheet .sheet{border-radius:0 0 18px 18px;max-height:88vh;p
 .vp-back{z-index:88}
 #techSheet{z-index:86}
 #uiModal{z-index:90}
-.bcount{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;color:var(--muted)}
+.bcount{flex-wrap:wrap;display:flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;color:var(--muted)}
 .bcount button{width:30px;height:28px;border:1px solid var(--line);background:var(--surface);border-radius:8px;font-size:16px;line-height:1;font-weight:700;color:var(--text)}
 .bcount button:disabled{opacity:.4}
-.bcount span{white-space:nowrap}
+.bcount span{white-space:nowrap}.bcount span:last-child:not(:first-child){white-space:normal}
+.chip{max-width:100%}
+.n-fchips .chip{white-space:normal;text-align:left}
+@media (max-width:420px){.levels button{font-size:12.5px;padding:6px 0}}
+@media (max-width:380px){.levels{gap:3px}.levels button{font-size:11.5px;letter-spacing:-.02em}}
 .bcount b{min-width:18px;text-align:center;color:var(--text);font-size:14px}
 body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 /* ---------- doses e fora da noite ---------- */
@@ -928,7 +942,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
     <button role="tab" id="tab-estoque" aria-selected="true">Estoque</button>
     <button role="tab" id="tab-carta" aria-selected="false">Receitas</button>
     <button role="tab" id="tab-menu" aria-selected="false">Cardápio</button>
-    <button role="tab" id="tab-lab" aria-selected="false">Laboratório</button>
+    <button role="tab" id="tab-lab" aria-selected="false"><span class="fl">Laboratório</span><span class="sh">Lab</span></button>
     <button role="tab" id="tab-noite" aria-selected="false">Noite</button>
     <button role="tab" id="tab-hist" aria-selected="false">Histórico</button>
     <button role="tab" id="tab-sugg" aria-selected="false">Sugestões</button>
@@ -1036,7 +1050,7 @@ body:has(#bench:not([hidden])) .timer-pill{top:auto;bottom:calc(92px + env(safe-
 </div></div>
 <div class="sheet-back" id="labSheet" aria-hidden="true"><div class="sheet" role="dialog" aria-modal="true" id="labSheetBody"></div></div>
 <div class="pdf-overlay" id="pdfOverlay" hidden>Preparando o cardápio em PDF…</div>
-<nav class="g-nav" id="guestNav" hidden aria-label="Navegação do convidado"><button id="gTabMenu" aria-selected="true">Cardápio</button><button id="gTabLab" aria-selected="false">Laboratório</button><button id="gTabAlq" aria-selected="false" hidden>Alquimia</button><button id="gTabHist" aria-selected="false" hidden>Histórico</button></nav>
+<nav class="g-nav" id="guestNav" hidden aria-label="Navegação do convidado"><button id="gTabMenu" aria-selected="true">Cardápio</button><button id="gTabLab" aria-selected="false"><span class="fl">Laboratório</span><span class="sh">Lab</span></button><button id="gTabAlq" aria-selected="false" hidden>Alquimia</button><button id="gTabHist" aria-selected="false" hidden>Histórico</button></nav>
 <div class="sheet-back" id="techSheet" aria-hidden="true"><div class="sheet" role="dialog" aria-modal="true" id="techBody"></div></div>
 <div class="bench" id="bench" hidden role="dialog" aria-modal="true" aria-labelledby="bnTitle"><div class="bench-in">
   <div class="bench-top"><button id="bnClose">Sair</button><div class="bench-title" id="bnTitle"></div><button id="bnVoice" aria-pressed="false">Voz</button></div>
